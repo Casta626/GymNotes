@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EjercicioController;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Prueba;
 use Illuminate\Support\Facades\Route;
@@ -15,12 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/ejercicios', [EjercicioController::class, 'index']);
+
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {   
     /**
      * Home Routes
      */
     Route::get('/', 'HomeController@index')->name('home.index');
+    // Route::get('/ejercicios', 'EjercicioController@index')->name('ejercicio.index');
 
     Route::group(['middleware' => ['guest']], function() {
         /**
