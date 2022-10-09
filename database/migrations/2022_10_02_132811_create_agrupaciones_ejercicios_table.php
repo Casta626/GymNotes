@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tipos_ejercicios', function (Blueprint $table) {
+        Schema::create('agrupaciones_ejercicios', function (Blueprint $table) {
             $table->id();
             $table->foreignId('usuario_id')->references('id')->on('usuarios');
-            $table->string('grupo_muscular');
+            $table->foreignId('rutina_id')->references('id')->on('rutinas');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipos_ejercicios');
+        Schema::dropIfExists('agrupaciones_ejercicios');
     }
 };

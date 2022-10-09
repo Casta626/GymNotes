@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class SerieSeeder extends Seeder
+class EjerciciosMaquinasSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,14 +15,11 @@ class SerieSeeder extends Seeder
      */
     public function run()
     {
-        //DB::table('series')->truncate();
-        DB::table('series')->insert([
+        DB::table('ejercicios_maquinas')->insert([
             'id' => 1,
-            'ejercicio_maquina_id' => 1,
-            'peso' => 80,
-            'repeticiones' => 12,
-            'tiempo_descanso' => 45,
-            'descripcion' => 'Tremendo DropSet',
+            'agrupacion_ejercicio_id' => 1,
+            'id_ejercicio' => 'Elevacion frontal',
+            'descripcion' => 'En un banco realiza una elevacion.',
         ]);
     }
 }
