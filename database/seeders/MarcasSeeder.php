@@ -15,10 +15,10 @@ class MarcasSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('alimentos')->insert([
+        DB::table('marcas')->insert([
             'id' => 1,
             'nombre' => 'Monster Energy',
-            'fecha_creacion' => 2002,
+            'fecha_creacion' => '2002',
         ]);
     }
 }

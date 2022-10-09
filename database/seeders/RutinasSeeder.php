@@ -15,7 +15,7 @@ class RutinasSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('musculos')->insert([
+        DB::table('rutinas')->insert([
             'id' => 1,
         ]);
     }

@@ -15,7 +15,7 @@ class EjerciciosSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('musculos')->insert([
+        DB::table('ejercicios')->insert([
             'id' => 1,
             'musculo_id' => 1,
             'nombre' => 'Elevacion frontal',

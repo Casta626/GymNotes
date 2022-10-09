@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('agrupacion_ejercicio_id')->references('id')->on('agrupaciones_ejercicios');
             $table->foreignId('ejercicio_id')->references('id')->on('ejercicios');
+            $table->string('descripcion');
         });
     }
 

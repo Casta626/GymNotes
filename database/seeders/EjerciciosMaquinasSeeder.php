@@ -18,7 +18,7 @@ class EjerciciosMaquinasSeeder extends Seeder
         DB::table('ejercicios_maquinas')->insert([
             'id' => 1,
             'agrupacion_ejercicio_id' => 1,
-            'id_ejercicio' => 'Elevacion frontal',
+            'ejercicio_id' => 1,
             'descripcion' => 'En un banco realiza una elevacion.',
         ]);
     }

@@ -15,7 +15,7 @@ class EanSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('alimentos')->insert([
+        DB::table('ean')->insert([
             'id' => 1,
             'tipo_ean' => 'EAN-13',
         ]);
