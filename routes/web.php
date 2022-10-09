@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/ejercicios', [EjercicioController::class, 'index']);
 
-Route::get('/valoralimentos', [ValorAlimentosController::class, 'index']);
+Route::get('/valor-alimentos', [ValorAlimentosController::class, 'index']);
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {   

@@ -47,7 +47,7 @@
                 </tr>
                 @foreach($series as $serie)
 
-                    @if ($serie->nombre_musculo == "Dorsales")
+                    @if ($serie->nombre_musculo == "Espalda")
                 <tr class="bg-primary">
                     <td>{{ $serie->nombre_musculo }}</td>
                     <td>{{ $serie->descripcion }}</td>
@@ -63,6 +63,42 @@
                     <td>{{ $serie->peso }} kg</td>
                     <td>{{ $serie->repeticiones }}</td>
                     <td>{{ $serie->tiempo_descanso }} seg</td>
+                </tr>
+                    @endif
+                    @if ($serie->nombre_musculo == "Hombro")
+                <tr class="bg-warning">
+                    <td>{{ $serie->nombre_musculo }}</td>
+                    <td>{{ $serie->descripcion }}</td>
+                    <td>{{ $serie->peso }} kg</td>
+                    <td>{{ $serie->repeticiones }}</td>
+                    <td>{{ $serie->tiempo_descanso }} seg</td>
+                </tr>
+                    @endif
+                    @if ($serie->nombre_musculo == "Piernas")
+                <tr class="bg-danger">
+                    <td>{{ $serie->nombre_musculo }}</td>
+                    <td>{{ $serie->descripcion }}</td>
+                    <td>{{ $serie->peso }} kg</td>
+                    <td>{{ $serie->repeticiones }}</td>
+                    <td>{{ $serie->tiempo_descanso }} seg</td>
+                </tr>
+                    @endif
+                    @if ($serie->nombre_musculo == "Abdominales")
+                <tr class="bg-info">
+                    <td>{{ $serie->nombre_musculo }}</td>
+                    <td>{{ $serie->descripcion }}</td>
+                    <td>{{ $serie->peso }} kg</td>
+                    <td>{{ $serie->repeticiones }}</td>
+                    <td>{{ $serie->tiempo_descanso }} seg</td>
+                </tr>
+                    @endif
+                    @if ($serie->nombre_musculo == "Brazos")
+                <tr class="bg-success" style="background-color: blueviolet">
+                    <td style="background-color: blueviolet">{{ $serie->nombre_musculo }}</td>
+                    <td style="background-color: blueviolet">{{ $serie->descripcion }}</td>
+                    <td style="background-color: blueviolet">{{ $serie->peso }} kg</td>
+                    <td style="background-color: blueviolet">{{ $serie->repeticiones }}</td>
+                    <td style="background-color: blueviolet">{{ $serie->tiempo_descanso }} seg</td>
                 </tr>
                     @endif
                 @endforeach

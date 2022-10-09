@@ -56,6 +56,10 @@
         </style>
     </head>
     <body>
+        @extends('layouts.app-master')
+
+        @section('content')
+        <div class="bg-light p-5 rounded">
         <div id="nutritionfacts">
             <table width="242" cellspacing="0" cellpadding="0">
                 <tbody><tr>
@@ -187,6 +191,7 @@
                     </td>
                 </tr>
             </tbody></table>
+        </div>
         </div>
     </body>
 </html>
