@@ -43,6 +43,11 @@ class Usuarios extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    //** Relaciones */
+    public function agrupacionesEjercicios(){
+        return $this->belongsTo(AgrupacionesEjercicios::class);
+    }
+
     public function setPasswordAttribute($value)
 {
    $this->attributes['password'] = bcrypt($value);
