@@ -45,7 +45,7 @@ class Usuarios extends Authenticatable
 
     //** Relaciones */
     public function agrupacionesEjercicios(){
-        return $this->belongsTo(AgrupacionesEjercicios::class);
+        return $this->belongsTo(AgrupacionesEjercicios::class, 'id');
     }
 
     public function setPasswordAttribute($value)
