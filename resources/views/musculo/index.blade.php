@@ -107,13 +107,19 @@
                         @endif
                     @endforeach
             
-    
-            {{-- @else
-                <tr>
-                    <td>Semana 1</td>
-                </tr>
-            @endif --}}
             </table>
+
+            @foreach($musculos as $musculo)
+            <div>
+                @if($musculo->id == 1)
+                <h1 style="margin-top: 5%">Músculo: {{ $musculo->nombre }} </h1>
+                <h1>Grupo muscular: {{ $musculo->grupo_muscular }} </h1>
+                <p>Descripción: El músculo sirve para x, se usa en ...</p>
+                <IMG SRC="http://trsmart.weebly.com/uploads/2/9/2/7/29274265/6598559_orig.jpg">
+                @endif
+            </div>
+            @endforeach
+
         </div>
     @endsection
     </body>
