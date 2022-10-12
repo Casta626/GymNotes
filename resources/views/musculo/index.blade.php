@@ -34,7 +34,7 @@
     <div class="bg-light p-5 rounded">
 
         {{-- @if(count($series > 0)) --}}
-        @foreach($musculos as $musculo)
+        
         {{-- <h1>Semana 1 03/10/2022-09/10/2022</h1> --}}
         {{-- <h1>{{ ucwords(\Carbon\Carbon::parse(strftime($agrupaciones_ejercicio->updated_at))->formatLocalized('%A %d de %B del %Y')) }}</h1> --}}
         
@@ -46,7 +46,7 @@
                     <th>Grupo muscular</th>
                 </tr>
                
-
+                @foreach($musculos as $musculo)
                     @if ($musculo->grupo_muscular == "Espalda")
                     <tr class="bg-primary">
                         <td>{{ $musculo->id }}</td>
