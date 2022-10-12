@@ -23,6 +23,28 @@
     tr,td,th{
         padding: 1.5%;
     }
+
+    div.noticia {
+    width: 100%;
+    margin: 20px auto;
+    background-color:#ffc107;
+    color: #fff;
+    padding: 15px;
+    }
+
+    div.noticia img.izquierda {
+    float: left;
+    margin-right: 15px;
+    }
+
+    div.noticia img.derecha {
+    float: right;
+    margin-left: 15px;
+    }
+
+    div.reset {
+    clear: both;
+    }
 </style>
 </head>
 <body>
@@ -110,14 +132,33 @@
             </table>
 
             @foreach($musculos as $musculo)
-            <div>
+            {{-- <div>
                 @if($musculo->id == 1)
                 <h1 style="margin-top: 5%">Músculo: {{ $musculo->nombre }} </h1>
                 <h1>Grupo muscular: {{ $musculo->grupo_muscular }} </h1>
                 <p>Descripción: El músculo sirve para x, se usa en ...</p>
                 <IMG SRC="http://trsmart.weebly.com/uploads/2/9/2/7/29274265/6598559_orig.jpg">
                 @endif
-            </div>
+            </div> --}}
+
+            @if($musculo->id == 1)
+            {{-- <div class="noticia">
+                <img class="izquierda" src="http://orig11.deviantart.net/46ea/f/2010/018/7/5/avatar_by_chiron178.png">
+                <aside>Lo que queremos hacer es colocar este texto al lado derecho de la imagen, algo así como se observa en periódicos o revistas.</aside>
+                <div class="reset"></div>
+              </div> --}}
+              
+              <div class="noticia">
+                <img class="derecha" src="http://trsmart.weebly.com/uploads/2/9/2/7/29274265/6598559_orig.jpg">
+                <aside>Descripción: El músculo sirve para x, se usa en ...</aside>
+                <div class="reset"></div>
+              </div>
+              
+              {{-- <div class="noticia">
+                <aside>Las imágenes fueron tomadas de DevinatArt y los créditos son de sus respectivos autores. Gracias.</aside>
+                <div class="reset"></div>
+              </div> --}}
+              @endif
             @endforeach
 
         </div>
