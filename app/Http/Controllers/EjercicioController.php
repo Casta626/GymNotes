@@ -9,8 +9,8 @@ class EjercicioController extends Controller
 {
     public function index() 
     {
-
-        $series = DB::table('series')->get();
-        return view('ejercicio.index', ['series' => $series]);
+        setlocale(LC_ALL, 'es_ES');
+        $agrupaciones_ejercicios = DB::table('agrupaciones_ejercicios')->get();
+        return view('ejercicio.index', ['agrupaciones_ejercicios' => $agrupaciones_ejercicios]);
     }
 }
