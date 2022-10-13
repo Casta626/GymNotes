@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
-use App\Models\Usuarios;
+use App\Models\Usuario;
 
 class RegisterController extends Controller
 {
@@ -28,7 +28,7 @@ class RegisterController extends Controller
      */
     public function register(RegisterRequest $request) 
     {
-        $user = Usuarios::create($request->validated());
+        $user = Usuario::create($request->validated());
 
         auth()->login($user);
 

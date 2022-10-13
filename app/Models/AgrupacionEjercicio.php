@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AgrupacionesEjercicios extends Model
+class AgrupacionEjercicio extends Model
 {
     use HasFactory;
 
@@ -13,10 +13,10 @@ class AgrupacionesEjercicios extends Model
 
     //** Relaciones */
     public function rutinas(){
-        return $this->hasMany(Rutinas::class);
+        return $this->belongsTo(Rutina::class);
     }
 
     public function usuarios(){
-        return $this->hasMany(Usuarios::class);
+        return $this->belongsTo(Usuario::class);
     }
 }
