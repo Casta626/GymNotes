@@ -15,9 +15,9 @@ class EjercicioController extends Controller
         setlocale(LC_ALL, 'es_ES');
         // $agrupaciones_ejercicios = DB::table('agrupaciones_ejercicios')->get();
         $usuarios = Usuario::with('agrupacionesEjercicios')->get();
-        $rutinas = Rutina::with('agrupacionesEjercicios')->get();
+        // $rutinas = Rutina::with('agrupacionesEjercicios')->get();
         // return view('ejercicio.index', ['agrupaciones_ejercicios' => $agrupaciones_ejercicios]);
         dd($usuarios);
-        return view('ejercicio.index', compact('usuarios') ,compact('rutinas'));
+        return view('ejercicio.index', compact('usuarios'));
     }
 }
