@@ -9,7 +9,7 @@
           <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
           <li><a href="/ejercicios" class="nav-link px-2 text-white">Ejercicios</a></li>
           <li><a href="/valor-alimentos" class="nav-link px-2 text-white">Valor Alimentos</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+          <li><a href="/musculos" class="nav-link px-2 text-white">Musculos</a></li>
           <li><a href="#" class="nav-link px-2 text-white">About</a></li>
         </ul>
   

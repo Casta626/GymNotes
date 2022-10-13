@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EjercicioController;
+use App\Http\Controllers\MusculosController;
 use App\Http\Controllers\ValorAlimentosController;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Prueba;
@@ -18,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/ejercicios', [EjercicioController::class, 'index']);
+
+Route::get('/musculos', [MusculosController::class, 'index']);
 
 Route::get('/valor-alimentos', [ValorAlimentosController::class, 'index']);
 

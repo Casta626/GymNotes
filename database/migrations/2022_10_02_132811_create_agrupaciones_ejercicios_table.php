@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('dias', function (Blueprint $table) {
+        Schema::create('agrupaciones_ejercicios', function (Blueprint $table) {
             $table->id();
             $table->foreignId('usuario_id')->references('id')->on('usuarios');
-            $table->foreignId('alimento_id')->references('id')->on('alimentos');
-            $table->foreignId('tipo_ejercicio')->references('id')->on('tipos_ejercicios');
+            $table->foreignId('rutina_id')->references('id')->on('rutinas');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dias');
+        Schema::dropIfExists('agrupaciones_ejercicios');
     }
 };

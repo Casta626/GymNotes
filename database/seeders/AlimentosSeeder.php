@@ -18,11 +18,12 @@ class AlimentosSeeder extends Seeder
         //DB::table('alimentos')->truncate();
         DB::table('alimentos')->insert([
             'usuario_id' => 1,
+            'marca_id' => 1,
+            'ean_id' => 1,
             'codigo_barras' => '347263283',
-            'tipo_ean' => 'EAN-13',
-            'marca' => 'Monster',
             'nombre' => 'Mango Loco',
             'descripcion' => 'Bebida energética de mango',
+            'fecha_creacion' => '2020/10/10',
         ]);
     }
 }

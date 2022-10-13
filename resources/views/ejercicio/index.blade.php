@@ -26,15 +26,17 @@
 </style>
 </head>
 <body>
+    
 @extends('layouts.app-master')
 
 @section('content')
+{{ setlocale(LC_ALL,"es_ES")  }}
     <div class="bg-light p-5 rounded">
 
         {{-- @if(count($series > 0)) --}}
-
-        <h1>Semana 1 03/10/2022-09/10/2022</h1>
-        <h1>Lunes</h1>
+        @foreach($agrupaciones_ejercicios as $agrupaciones_ejercicio)
+        {{-- <h1>Semana 1 03/10/2022-09/10/2022</h1> --}}
+        <h1>{{ ucwords(\Carbon\Carbon::parse(strftime($agrupaciones_ejercicio->updated_at))->formatLocalized('%A %d de %B del %Y')) }}</h1>
         
         
         <table class="ejercicio">
@@ -44,63 +46,68 @@
                     <th>Peso</th>
                     <th>Repeticiones</th>
                     <th>Descanso</th>
+                    <th>Hora</th>
                 </tr>
-                @foreach($series as $serie)
+               
 
-                    @if ($serie->nombre_musculo == "Espalda")
+                    {{-- @if ($serie->nombre_musculo == "Espalda") --}}
                 <tr class="bg-primary">
-                    <td>{{ $serie->nombre_musculo }}</td>
-                    <td>{{ $serie->descripcion }}</td>
-                    <td>{{ $serie->peso }} kg</td>
-                    <td>{{ $serie->repeticiones }}</td>
-                    <td>{{ $serie->tiempo_descanso }} seg</td>
+                    <td>{{ $agrupaciones_ejercicio->id }}</td>
+                    <td>{{ $agrupaciones_ejercicio->usuario_id }}</td>
+                    <td>{{ $agrupaciones_ejercicio->rutina_id }} kg</td>
+                    <td>{{ $agrupaciones_ejercicio->created_at }}</td>
+                    <td> seg</td>
+                    <td>{{ Carbon\Carbon::createFromTimeString($agrupaciones_ejercicio->updated_at)->format('g:i a')  }}</td>
+                    {{ \Carbon\Carbon::parse($agrupaciones_ejercicio->updated_at)->diffForHumans() }}
+                    {{-- {{  date('l, d M Y'); }} --}}
+                    {{-- {{ \Carbon\Carbon::createFromFormat('m/d/Y',$agrupaciones_ejercicio->updated_at) }} --}}
                 </tr>
-                    @endif
-                    @if ($serie->nombre_musculo == "Pecho")
+                    {{-- @endif
+                    @if ($agrupaciones_ejercicios->nombre_musculo == "Pecho")
                 <tr class="bg-success">
-                    <td>{{ $serie->nombre_musculo }}</td>
-                    <td>{{ $serie->descripcion }}</td>
-                    <td>{{ $serie->peso }} kg</td>
-                    <td>{{ $serie->repeticiones }}</td>
-                    <td>{{ $serie->tiempo_descanso }} seg</td>
+                    <td>{{ $agrupaciones_ejercicios->nombre_musculo }}</td>
+                    <td>{{ $agrupaciones_ejercicios->descripcion }}</td>
+                    <td>{{ $agrupaciones_ejercicios->peso }} kg</td>
+                    <td>{{ $agrupaciones_ejercicios->repeticiones }}</td>
+                    <td>{{ $agrupaciones_ejercicios->tiempo_descanso }} seg</td>
                 </tr>
                     @endif
-                    @if ($serie->nombre_musculo == "Hombro")
+                    @if ($agrupaciones_ejercicios->nombre_musculo == "Hombro")
                 <tr class="bg-warning">
-                    <td>{{ $serie->nombre_musculo }}</td>
-                    <td>{{ $serie->descripcion }}</td>
-                    <td>{{ $serie->peso }} kg</td>
-                    <td>{{ $serie->repeticiones }}</td>
-                    <td>{{ $serie->tiempo_descanso }} seg</td>
+                    <td>{{ $agrupaciones_ejercicios->nombre_musculo }}</td>
+                    <td>{{ $agrupaciones_ejercicios->descripcion }}</td>
+                    <td>{{ $agrupaciones_ejercicios->peso }} kg</td>
+                    <td>{{ $agrupaciones_ejercicios->repeticiones }}</td>
+                    <td>{{ $agrupaciones_ejercicios->tiempo_descanso }} seg</td>
                 </tr>
                     @endif
-                    @if ($serie->nombre_musculo == "Piernas")
+                    @if ($agrupaciones_ejercicios->nombre_musculo == "Piernas")
                 <tr class="bg-danger">
-                    <td>{{ $serie->nombre_musculo }}</td>
-                    <td>{{ $serie->descripcion }}</td>
-                    <td>{{ $serie->peso }} kg</td>
-                    <td>{{ $serie->repeticiones }}</td>
-                    <td>{{ $serie->tiempo_descanso }} seg</td>
+                    <td>{{ $agrupaciones_ejercicios->nombre_musculo }}</td>
+                    <td>{{ $agrupaciones_ejercicios->descripcion }}</td>
+                    <td>{{ $agrupaciones_ejercicios->peso }} kg</td>
+                    <td>{{ $agrupaciones_ejercicios->repeticiones }}</td>
+                    <td>{{ $agrupaciones_ejercicios->tiempo_descanso }} seg</td>
                 </tr>
                     @endif
-                    @if ($serie->nombre_musculo == "Abdominales")
+                    @if ($agrupaciones_ejercicios->nombre_musculo == "Abdominales")
                 <tr class="bg-info">
-                    <td>{{ $serie->nombre_musculo }}</td>
-                    <td>{{ $serie->descripcion }}</td>
-                    <td>{{ $serie->peso }} kg</td>
-                    <td>{{ $serie->repeticiones }}</td>
-                    <td>{{ $serie->tiempo_descanso }} seg</td>
+                    <td>{{ $agrupaciones_ejercicios->nombre_musculo }}</td>
+                    <td>{{ $agrupaciones_ejercicios->descripcion }}</td>
+                    <td>{{ $agrupaciones_ejercicios->peso }} kg</td>
+                    <td>{{ $agrupaciones_ejercicios->repeticiones }}</td>
+                    <td>{{ $agrupaciones_ejercicios->tiempo_descanso }} seg</td>
                 </tr>
                     @endif
-                    @if ($serie->nombre_musculo == "Brazos")
+                    @if ($agrupaciones_ejercicios->nombre_musculo == "Brazos")
                 <tr class="bg-success" style="background-color: blueviolet">
-                    <td style="background-color: blueviolet">{{ $serie->nombre_musculo }}</td>
-                    <td style="background-color: blueviolet">{{ $serie->descripcion }}</td>
-                    <td style="background-color: blueviolet">{{ $serie->peso }} kg</td>
-                    <td style="background-color: blueviolet">{{ $serie->repeticiones }}</td>
-                    <td style="background-color: blueviolet">{{ $serie->tiempo_descanso }} seg</td>
+                    <td style="background-color: blueviolet">{{ $agrupaciones_ejercicios->nombre_musculo }}</td>
+                    <td style="background-color: blueviolet">{{ $agrupaciones_ejercicios->descripcion }}</td>
+                    <td style="background-color: blueviolet">{{ $agrupaciones_ejercicios->peso }} kg</td>
+                    <td style="background-color: blueviolet">{{ $agrupaciones_ejercicios->repeticiones }}</td>
+                    <td style="background-color: blueviolet">{{ $agrupaciones_ejercicios->tiempo_descanso }} seg</td>
                 </tr>
-                    @endif
+                    @endif --}}
                 @endforeach
         
 

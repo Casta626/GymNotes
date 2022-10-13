@@ -15,14 +15,13 @@ return new class extends Migration
     {
         Schema::create('series', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tipo_ejercicio_id')->references('id')->on('tipos_ejercicios');
-            $table->string('nombre_musculo'); //* nombre_musculo_trabajado
-            $table->text('descripcion');
-            $table->float('tiempo_descanso');
+            $table->foreignId('ejercicio_maquina_id')->references('id')->on('ejercicios_maquinas');
             $table->float('peso');
             $table->float('repeticiones'); 
-            $table->timestamp('inicio')->nullable();
-            $table->timestamp('fin')->nullable();
+            $table->float('tiempo_descanso');
+            $table->text('descripcion'); //Por si quiere añadir algo extra en la serie
+            $table->timestamp('inicio')->nullable(); //Boton para que no tenga que estar entrando y saliendo de la app
+            $table->timestamp('fin')->nullable(); //Boton para que no tenga que estar entrando y saliendo de la app
             $table->timestamps();
         });
     }
