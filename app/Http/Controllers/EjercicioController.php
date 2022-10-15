@@ -17,7 +17,7 @@ class EjercicioController extends Controller
         $usuarios = Usuario::with('agrupacionesEjercicios')->get();
         // $rutinas = Rutina::with('agrupacionesEjercicios')->get();
         // return view('ejercicio.index', ['agrupaciones_ejercicios' => $agrupaciones_ejercicios]);
-        dd($usuarios);
+        // dd($usuarios);
         return view('ejercicio.index', compact('usuarios'));
     }
 }

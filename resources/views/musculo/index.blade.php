@@ -52,19 +52,105 @@
 @extends('layouts.app-master')
 
 @section('content')
+
+    {{-- ! EN EL RESPONSIVE PONER QUE CADA CARTA/MUSCLO SE PASE DESLIZANDOSE A UN LADO --}}
+
+    {{-- TODO EN EL RESPONSIVE PONER QUE CADA CARTA/MUSCLO SE PASE DESLIZANDOSE A UN LADO --}}
+
 {{ setlocale(LC_ALL,"es_ES")  }}
-    <div class="bg-light p-5 rounded">
+<div class="bg-light p-5 rounded">
 
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
+    <h1 style="margin: 5%">Hombro</h1>
+    <div style="display: flex; text-align: center;">
+        <div  class="card" style="width: 18rem; margin:0px auto;">
+            <img class="card-img-top" src="https://c8.alamy.com/compes/g1hd32/los-musculos-deltoides-anterior-anatomia-musculos-aislados-en-blanco-ilustracion-3d-g1hd32.jpg" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Deltoides frontal</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a style="margin: 1%" href="#" class="btn btn-primary">Ejercicios Deltoides frontal</a>
+              <a style="margin: 1%" href="#" class="btn btn-secondary">Ejercicios para Hombro</a>
             </div>
-          </div>
-
         </div>
+
+        <div  class="card" style="width: 18rem; margin:0px auto;">
+            <img class="card-img-top" src="https://c8.alamy.com/compes/g1hd32/los-musculos-deltoides-anterior-anatomia-musculos-aislados-en-blanco-ilustracion-3d-g1hd32.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Deltoides frontal</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a style="margin: 1%" href="#" class="btn btn-primary">Ejercicios Deltoides frontal</a>
+              <a style="margin: 1%" href="#" class="btn btn-secondary">Ejercicios para Hombro</a>
+            </div>
+        </div>
+
+        <div  class="card" style="width: 18rem; margin:0px auto;">
+            <img class="card-img-top" src="https://c8.alamy.com/compes/g1hd32/los-musculos-deltoides-anterior-anatomia-musculos-aislados-en-blanco-ilustracion-3d-g1hd32.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Deltoides frontal</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a style="margin: 1%" href="#" class="btn btn-primary">Ejercicios Deltoides frontal</a>
+              <a style="margin: 1%" href="#" class="btn btn-secondary">Ejercicios para Hombro</a>
+            </div>
+        </div>
+    </div>
+
+    <h1 style="margin: 5%">Pecho</h1>
+    <div style="display: flex; text-align: center;">
+        <div  class="card" style="width: 18rem; margin:0px auto;">
+            <img class="card-img-top" src="https://c8.alamy.com/compes/g1hd32/los-musculos-deltoides-anterior-anatomia-musculos-aislados-en-blanco-ilustracion-3d-g1hd32.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Deltoides frontal</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a style="margin: 1%" href="#" class="btn btn-primary">Ejercicios Deltoides frontal</a>
+              <a style="margin: 1%" href="#" class="btn btn-secondary">Ejercicios para Hombro</a>
+            </div>
+        </div>
+
+        <div  class="card" style="width: 18rem; margin:0px auto;">
+            <img class="card-img-top" src="https://c8.alamy.com/compes/g1hd32/los-musculos-deltoides-anterior-anatomia-musculos-aislados-en-blanco-ilustracion-3d-g1hd32.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Deltoides frontal</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a style="margin: 1%" href="#" class="btn btn-primary">Ejercicios Deltoides frontal</a>
+              <a style="margin: 1%" href="#" class="btn btn-secondary">Ejercicios para Hombro</a>
+            </div>
+        </div>
+
+        <div  class="card" style="width: 18rem; margin:0px auto;">
+            <img class="card-img-top" src="https://c8.alamy.com/compes/g1hd32/los-musculos-deltoides-anterior-anatomia-musculos-aislados-en-blanco-ilustracion-3d-g1hd32.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Deltoides frontal</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a style="margin: 1%" href="#" class="btn btn-primary">Ejercicios Deltoides frontal</a>
+              <a style="margin: 1%" href="#" class="btn btn-secondary">Ejercicios para Hombro</a>
+            </div>
+        </div>
+
+        <div  class="card" style="width: 18rem; margin:0px auto;">
+            <img class="card-img-top" src="https://c8.alamy.com/compes/g1hd32/los-musculos-deltoides-anterior-anatomia-musculos-aislados-en-blanco-ilustracion-3d-g1hd32.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Deltoides frontal</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a style="margin: 1%" href="#" class="btn btn-primary">Ejercicios Deltoides frontal</a>
+              <a style="margin: 1%" href="#" class="btn btn-secondary">Ejercicios para Hombro</a>
+            </div>
+        </div>
+    </div>
+
+    <h1 style="margin: 5%">Antebrazo</h1>
+    <div style="display: flex; text-align: center;">
+        <div  class="card" style="width: 18rem; margin:0px auto;">
+            <img class="card-img-top" src="https://c8.alamy.com/compes/g1hd32/los-musculos-deltoides-anterior-anatomia-musculos-aislados-en-blanco-ilustracion-3d-g1hd32.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Deltoides frontal</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a style="margin: 1%" href="#" class="btn btn-primary">Ejercicios Deltoides frontal</a>
+              <a style="margin: 1%" href="#" class="btn btn-secondary">Ejercicios para Hombro</a>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
 @endsection
     </body>
     </html>

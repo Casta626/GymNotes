@@ -34,9 +34,15 @@
     <div class="bg-light p-5 rounded">
 
         {{-- @if(count($series > 0)) --}}
-        @foreach($agrupaciones_ejercicios as $agrupaciones_ejercicio)
+        @foreach($usuarios as $usuario)
+
+        
         {{-- <h1>Semana 1 03/10/2022-09/10/2022</h1> --}}
+        @foreach($usuario->agrupacionesEjercicios as $agrupaciones_ejercicio)
+
+        <h1 style="margin: 5%"> {{ $usuario->username }} </h1>
         <h1>{{ ucwords(\Carbon\Carbon::parse(strftime($agrupaciones_ejercicio->updated_at))->formatLocalized('%A %d de %B del %Y')) }}</h1>
+        
         
         
         <table class="ejercicio">
@@ -56,9 +62,9 @@
                     <td>{{ $agrupaciones_ejercicio->usuario_id }}</td>
                     <td>{{ $agrupaciones_ejercicio->rutina_id }} kg</td>
                     <td>{{ $agrupaciones_ejercicio->created_at }}</td>
-                    <td> seg</td>
+                    <td>{{ \Carbon\Carbon::parse($agrupaciones_ejercicio->updated_at)->diffForHumans() }}</td>
                     <td>{{ Carbon\Carbon::createFromTimeString($agrupaciones_ejercicio->updated_at)->format('g:i a')  }}</td>
-                    {{ \Carbon\Carbon::parse($agrupaciones_ejercicio->updated_at)->diffForHumans() }}
+                    
                     {{-- {{  date('l, d M Y'); }} --}}
                     {{-- {{ \Carbon\Carbon::createFromFormat('m/d/Y',$agrupaciones_ejercicio->updated_at) }} --}}
                 </tr>
@@ -108,6 +114,7 @@
                     <td style="background-color: blueviolet">{{ $agrupaciones_ejercicios->tiempo_descanso }} seg</td>
                 </tr>
                     @endif --}}
+                @endforeach
                 @endforeach
         
 
