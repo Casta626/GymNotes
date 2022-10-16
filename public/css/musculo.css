@@ -1,0 +1,30 @@
+h1{
+    font-size-adjust: initial;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    
+}
+tr,td,th{
+    padding: 1.5%;
+}
+
+div.grupo{
+display: flex;
+text-align: center;
+  
+}
+
+div.carta{
+    width: 18rem;
+    margin:0px auto;
+}
+
+a.espacio{
+    margin-bottom: 5%;
+}
+
+

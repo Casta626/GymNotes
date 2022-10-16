@@ -11,6 +11,15 @@
           <li><a href="/valor-alimentos" class="nav-link px-2 text-white">Valor Alimentos</a></li>
           <li><a href="/musculos" class="nav-link px-2 text-white">Musculos</a></li>
           <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+          {{-- <li>
+            <a class="nav-link px-2 text-white">
+              <select >
+                <option value="A" href="#pecho">Action</option>
+                <option value="B" href="#espalda">Another action</option>
+                <option value="C" href="#pierna">Something else here</option>
+              </select>
+            </a>
+          </li> --}}
         </ul>
   
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
