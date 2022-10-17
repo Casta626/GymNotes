@@ -57,16 +57,34 @@
                
 
                     {{-- @if ($serie->nombre_musculo == "Espalda") --}}
-                <tr class="bg-primary">
+                {{-- <tr class="bg-primary">
                     <td>{{ $agrupaciones_ejercicio->id }}</td>
                     <td>{{ $agrupaciones_ejercicio->usuario_id }}</td>
                     <td>{{ $agrupaciones_ejercicio->rutina_id }} kg</td>
                     <td>{{ $agrupaciones_ejercicio->created_at }}</td>
                     <td>{{ \Carbon\Carbon::parse($agrupaciones_ejercicio->updated_at)->diffForHumans() }}</td>
                     <td>{{ Carbon\Carbon::createFromTimeString($agrupaciones_ejercicio->updated_at)->format('g:i a')  }}</td>
-                    
+                     --}}
                     {{-- {{  date('l, d M Y'); }} --}}
                     {{-- {{ \Carbon\Carbon::createFromFormat('m/d/Y',$agrupaciones_ejercicio->updated_at) }} --}}
+                {{-- </tr> --}}
+
+                <tr class="bg-success" style="background-color: #4C2882">
+                    <td style="background-color: #4C2882">maricon</td>
+                    <td style="background-color: #4C2882">ay</td>
+                    <td style="background-color: #4C2882"> kg</td>
+                    <td style="background-color: #4C2882">maricon algo</td>
+                    <td style="background-color: #4C2882">seg</td>
+                    <td style="background-color: #4C2882">seg</td>
+                </tr>
+
+                <tr class="bg-success" style="background-color: #FFBF00">
+                    <td style="background-color: #FFBF00">maricon</td>
+                    <td style="background-color: #FFBF00">ay</td>
+                    <td style="background-color: #FFBF00"> kg</td>
+                    <td style="background-color: #FFBF00">maricon algo</td>
+                    <td style="background-color: #FFBF00">seg</td>
+                    <td style="background-color: #FFBF00">seg</td>
                 </tr>
                     {{-- @endif
                     @if ($agrupaciones_ejercicios->nombre_musculo == "Pecho")
