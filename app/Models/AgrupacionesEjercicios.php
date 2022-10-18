@@ -21,6 +21,6 @@ class AgrupacionesEjercicios extends Model
     }
 
     public function ejercicioMaquina(){
-        return $this->hasMany(EjercicioMaquina::class, 'usuario_id', 'id');
+        return $this->hasMany(EjercicioMaquina::class, 'agrupacion_ejercicio_id', 'id');
     }
 }

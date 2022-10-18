@@ -10,7 +10,7 @@
     {{-- <script type="text/javascript" src="{{ asset('js/script.js')  }}"></script> --}}
 
 </head>
-<body>
+<body style="background-image: url(https://media.istockphoto.com/vectors/fitness-seamless-pattern-black-and-white-vector-id1201068471?b=1&k=6&m=1201068471&s=170667a&w=0&h=D8_YZTJS-JChqfWp-R-nWU6x-E1w1Tt4X0P4fANsJXc=);">
     
 @extends('layouts.app-master')
 
@@ -23,7 +23,7 @@
     {{-- Todo Hacer un menú desplegable en el navbar y poner ahí los mmúsculos --}}
 
 {{ setlocale(LC_ALL,"es_ES")  }}
-<div style="background-image: url(https://media.istockphoto.com/vectors/fitness-seamless-pattern-black-and-white-vector-id1201068471?b=1&k=6&m=1201068471&s=170667a&w=0&h=D8_YZTJS-JChqfWp-R-nWU6x-E1w1Tt4X0P4fANsJXc=);">
+<div>
     <h1>Hombro</h1>
     <div class="grupo">
         <div  class="card carta">

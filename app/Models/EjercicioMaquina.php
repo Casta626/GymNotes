@@ -17,7 +17,7 @@ class EjercicioMaquina extends Model
         return $this->belongsTo(Ejercicio::class);
     }
 
-    public function ejercicioMaquina(){
-        return $this->hasMany(EjercicioMaquina::class, 'usuario_id', 'id');
+    public function serie(){
+        return $this->hasMany(Serie::class, 'ejercicio_maquina_id', 'id');
     }
 }
