@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class UsuariosSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +16,7 @@ class UsuariosSeeder extends Seeder
     public function run()
     {
         //DB::table('usuarios')->truncate();
-        DB::table('usuarios')->insert([
+        DB::table('users')->insert([
             'nombre' => 'José Antonio',
             'apellido1' => 'Castañeda',
             'apellido2' => 'Pavón',

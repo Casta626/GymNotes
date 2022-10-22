@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AgrupacionesEjercicios;
 use App\Models\EjercicioMaquina;
 use App\Models\Rutina;
-use App\Models\Usuario;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +15,7 @@ class EjercicioController extends Controller
     {
         setlocale(LC_ALL, 'es_ES');
         // $agrupaciones_ejercicios = DB::table('agrupaciones_ejercicios')->get();
-        $usuarios = Usuario::with('agrupacionesEjercicios')->get();
+        $usuarios = User::with('agrupacionesEjercicios')->get();
         $agrupaciones_ejercicios = AgrupacionesEjercicios::with('ejercicioMaquina')->get();
         // $ejercicio_maquina = EjercicioMaquina::with('serie')->get();
         // $rutinas = Rutina::with('agrupacionesEjercicios')->get();

@@ -33,15 +33,15 @@
 @section('content')
 {{ setlocale(LC_ALL,"es_ES")  }}
 
-@php
+{{-- @php
     $idUsuario = Auth::user()->id;
     $agruEj= App\Models\Serie::where('id',$idUsuario)->get();
-@endphp
+@endphp --}}
 
     <div>
         @foreach ($agruEj as $agEj)
 
-        <h1 >{{ ucwords(\Carbon\Carbon::parse(strftime($agEj->updated_at))->formatLocalized('%A %d de %B del %Y')) }}</h1>
+        {{-- <h1 >{{ ucwords(\Carbon\Carbon::parse(strftime($agEj->updated_at))->formatLocalized('%A %d de %B del %Y')) }}</h1> --}}
         
         
         {{-- @if ($serie->nombre_musculo == "Espalda") --}}
@@ -56,12 +56,13 @@
             </tr>
 
             <tr class="bg-success" style="background-color: #4C2882">
-                <td style="background-color: #4C2882">{{ $agEj->id }}</td>
-                <td style="background-color: #4C2882">{{ $agEj->descripcion}}</td>
-                <td style="background-color: #4C2882"> {{ $agEj->peso }}</td>
-                <td style="background-color: #4C2882">{{ $agEj->repeticiones }}</td>
-                <td style="background-color: #4C2882">{{ $agEj->tiempo_descanso }}</td>
-                <td style="background-color: #4C2882">{{ ucwords(\Carbon\Carbon::parse(strftime($agEj->created_at))->diffForHumans(null,null, 1, 1)) }}</td>
+                <td style="background-color: #4C2882"></td>
+                <td style="background-color: #4C2882"></td>
+                <td style="background-color: #4C2882"> </td>
+                <td style="background-color: #4C2882"></td>
+                <td style="background-color: #4C2882"></td>
+                <td style="background-color: #4C2882"></td>
+                {{-- {{ ucwords(\Carbon\Carbon::parse(strftime($agEj->created_at))->diffForHumans(null,null, 1, 1)) }} --}}
             </tr>
         </table>
             
