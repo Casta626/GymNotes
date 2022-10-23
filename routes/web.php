@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\EjercicioController;
 use App\Http\Controllers\MusculosController;
+use App\Http\Controllers\RmMaxController;
 use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\ValorAlimentosController;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Prueba;
+use App\Models\RmMax;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +22,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/ejercicios', [EjercicioController::class, 'index']);
+
+Route::get('/rm-max', [RmMaxController::class, 'index']);
+Route::post('/rm-max', [RmMaxController::class, 'rmCalculator'])->name('rmmax.rmcalculator');
 
 Route::get('/pruebas', [SeriesController::class, 'pruebas']);
 

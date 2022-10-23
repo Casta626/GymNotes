@@ -12,7 +12,8 @@ use function PHPSTORM_META\map;
 
 class SeriesController extends Controller
 {
-    public function pruebas2() 
+    
+    public function pruebas() 
     {
         $id = 2;
         setlocale(LC_ALL, 'es_ES');
@@ -27,24 +28,5 @@ class SeriesController extends Controller
         // dd($usuarios);
 
         return User::find($id)->agrupaciones_ejercicios()->get();
-    }
-
-    public function pruebas(Request $request)
-    {
-        $reps = [1, 0.95, 0.90, 0.86, 0.82, 0.78, 0.74, 0.70, 0.65, 0.61, 0.57, 0.53 ];
-        $valor = $reps[($request->rep - 1)];
-        $rm = $request->peso;
-        $repsCount = count($reps);
-        $valoresRM = [];
-        // $operacion = number_format((float)$rm/$valor, 2, ',', '');
-        for ($i = 0; $i < $repsCount; ++$i){
-            $operacion = number_format((float)$rm/$reps[$i], 2, ',', '');
-
-            array_push($valoresRM,$operacion);
-        }
-
-        $resultado = 90/0.82;
-        
-        return $valoresRM;
     }
 }

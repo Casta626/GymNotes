@@ -22,6 +22,6 @@ class EjercicioController extends Controller
         // return view('ejercicio.index', ['agrupaciones_ejercicios' => $agrupaciones_ejercicios]);
         // dd($usuarios);
         // dd($usuarios);
-        return view('ejercicio.index', compact('usuarios'), compact('agrupaciones_ejercicios'));
+        return view('ejercicio.index', compact(['usuarios', 'agrupaciones_ejercicios']));
     }
 }
