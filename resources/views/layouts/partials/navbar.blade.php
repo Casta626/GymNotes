@@ -9,34 +9,46 @@
           <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
           <li><a href="/ejercicios" class="nav-link px-2 text-white">Ejercicios</a></li>
           <li><a href="/valor-alimentos" class="nav-link px-2 text-white">Valor Alimentos</a></li>
-          <li><a href="/musculos" class="nav-link px-2 text-white">Musculos</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
-          {{-- <li>
-            <a class="nav-link px-2 text-white">
-              <select >
-                <option value="A" href="#pecho">Action</option>
-                <option value="B" href="#espalda">Another action</option>
-                <option value="C" href="#pierna">Something else here</option>
-              </select>
+          {{-- <li><a href="/musculos" class="nav-link px-2 text-white">Musculos</a></li> --}}
+    
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle text-white" href="/musculos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Musculos
             </a>
-          </li> --}}
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/musculos#pecho">Pecho</a></li>
+              <li><a class="dropdown-item" href="/musculos#espalda">Espalda</a></li>
+              <li><a class="dropdown-item" href="/musculos#hombro">Hombro</a></li>
+              <li><a class="dropdown-item" href="/musculos#abdomen">Abdomen</a></li>
+              <li><a class="dropdown-item" href="/musculos#piernas">Piernas</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li style="text-align: center">Brazos</li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/musculos#triceps">Triceps</a></li>
+              <li><a class="dropdown-item" href="/musculos#brazos">Biceps</a></li>
+              <li><a class="dropdown-item" href="/musculos#antebrazos">Antebrazos</a></li>
+              
+            </ul>
+          </li>
+          
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
         </ul>
   
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+        {{-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
           <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-        </form>
+        </form> --}}
   
         @auth
           {{auth()->user()->name}}
           <div class="text-end">
-            <a href="{{ route('logout.perform') }}" class="btn btn-outline-light me-2">Logout</a>
+            <a href="{{ route('logout.perform') }}" class="btn btn-light me-2">Salir</a>
           </div>
         @endauth
   
         @guest
           <div class="text-end">
-            <a href="{{ route('login.perform') }}" class="btn btn-outline-light me-2">Login</a>
-            <a href="{{ route('register.perform') }}" class="btn btn-warning">Sign-up</a>
+            <a href="{{ route('login.perform') }}" class="btn btn-light me-2">Iniciar sesión</a>
+            <a href="{{ route('register.perform') }}" class="btn btn-warning">Registrarse</a>
           </div>
         @endguest
       </div>
