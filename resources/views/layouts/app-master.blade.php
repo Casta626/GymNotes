@@ -35,7 +35,7 @@
     
     @include('layouts.partials.navbar')
 
-    <main class="container">
+    <main class="container" style="margin-top: 50px">
         @yield('content')
     </main>
 

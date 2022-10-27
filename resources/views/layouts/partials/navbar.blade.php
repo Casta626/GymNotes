@@ -1,4 +1,4 @@
-<header class="p-3 bg-danger text-white">
+<header class="p-3 bg-danger text-white" style="position: fixed; top: 0; right:0; left:0;  z-index:99999">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('alimentos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('usuario_id')->references('id')->on('usuarios');
+            $table->foreignId('usuario_id')->references('id')->on('users');
             $table->foreignId('marca_id')->references('id')->on('marcas');
             $table->foreignId('ean_id')->references('id')->on('ean');
             $table->string('nombre')->nullable();

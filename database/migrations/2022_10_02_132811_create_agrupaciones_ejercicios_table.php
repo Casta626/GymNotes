@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('agrupaciones_ejercicios', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('usuario_id')->references('id')->on('usuarios');
+            $table->foreignId('usuario_id')->references('id')->on('users');
             $table->foreignId('rutina_id')->references('id')->on('rutinas');
             $table->timestamps();
         });

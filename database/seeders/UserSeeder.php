@@ -20,9 +20,9 @@ class UserSeeder extends Seeder
             'nombre' => 'José Antonio',
             'apellido1' => 'Castañeda',
             'apellido2' => 'Pavón',
-            'username' => 'Pepe Llejos',
+            'username' => 'Casta66',
             'email' => 'pepellejos@gmail.com',
-            'password' => '1234',
+            'password' => encrypt('ercasta66_'),
             'telefono' => '654 66 44 22',
             'pais' => 'España',
         ]);

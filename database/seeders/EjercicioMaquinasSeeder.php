@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class EjerciciosMaquinasSeeder extends Seeder
+class EjercicioMaquinasSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class EjerciciosMaquinasSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('ejercicios_maquinas')->insert([
+        DB::table('ejercicio_maquinas')->insert([
             'id' => 1,
             'agrupacion_ejercicio_id' => 1,
             'ejercicio_id' => 1,
