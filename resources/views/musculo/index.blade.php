@@ -38,9 +38,8 @@
                         <h5 class="card-title">Pectoral Menor</h5>
                         <p class="card-text">El pectoral mayor trabaja directamente en el hombro, específicamente realizando
                             rotación interna y aducción, es decir dirige el brazo hacia la parte medial del cuerpo.</p>
-                        info: https://www.fisioterapia-online.com/glosario/musculos-pectoral-mayor-y-menor
-                        <a href="#" class="btn btn-primary espacio">Ejercicios Deltoides frontal</a>
-                        <a href="#" class="btn btn-secondary">Ejercicios para Hombro</a>
+                        <a href="https://www.fisioterapia-online.com/glosario/musculos-pectoral-mayor-y-menor">info:</a>
+                        <p></p>
                     </div>
                 </div>
 
@@ -61,8 +60,6 @@
                         <a
                             href="https://www.cuidate-murcia.com/el-pectoral-menor-anatomia-funcion-y-sus-patologias/#:~:text=El%20pectoral%20menor%20es%20un,como%20el%20de%20hombros%20adelantados">info:</a>
                         <p></p>
-                        <a href="#" class="btn btn-primary espacio">Ejercicios Deltoides frontal</a>
-                        <a href="#" class="btn btn-secondary">Ejercicios para Hombro</a>
                     </div>
                 </div>
                 <div class="card carta">
@@ -81,8 +78,6 @@
                         <a
                             href="https://www.cuidate-murcia.com/el-pectoral-menor-anatomia-funcion-y-sus-patologias/#:~:text=El%20pectoral%20menor%20es%20un,como%20el%20de%20hombros%20adelantados">info:</a>
                         <p></p>
-                        <a href="#" class="btn btn-primary espacio">Ejercicios Deltoides frontal</a>
-                        <a href="#" class="btn btn-secondary">Ejercicios para Hombro</a>
                     </div>
                 </div>
             </div>

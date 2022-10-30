@@ -1,13 +1,28 @@
-@extends('layouts.auth-master')
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="{{ asset('css/rmmax.css') }}" rel="stylesheet" type="text/css">
+
+    {{-- <script type="text/javascript" src="{{ asset('js/rmmax.js')  }}"></script> --}}
+    <title>Calculadora-RM</title>
+</head>
+
+<body>
+@extends('layouts.app-master')
 
 @section('content')
-<title>Calculadora-RM</title>
-    <form method="post" action="{{ route('rmmax.rmcalculator') }}">
+
+    <form method="get" action="{{ route('rmmax.rmcalculator') }}">
         
-        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-        <img class="mb-4" src="{!! url('gymnotes.ico') !!}" alt="GymNotes logo">
         
-        <h1 class="h3 mb-3 fw-normal">Descubre tu RM</h1>
+        <div class="centrado"><img class="mb-4 mitad" src="{!! url('gymnotes.ico') !!}" alt="GymNotes logo"></div>
+        
+        <h1>Descubre tu RM</h1>
 
         {{-- @include('layouts.partials.messages') --}}
 
@@ -27,8 +42,20 @@
             @endif
         </div>
 
-        <button class="w-100 btn btn-lg btn-danger" type="submit">Descubre tu RM</button>
+        <button href="{{ route('rmmax.rmcalculator') }}" class="w-100 btn btn-lg btn-danger" type="submit">Descubre tu RM</button>
+
+        {{-- @if (count($resultados) > 0 )
+        poner mas cajas de formulario.
+            
+        @else
+            
+        @endif --}}
+        {{-- <div>{{ $resultados[0] }}</div> --}}
+
         
-        @include('auth.partials.copy')
+        
+        {{-- @include('auth.partials.copy') --}}
     </form>
 @endsection
+</body>
+</html>

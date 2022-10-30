@@ -8,9 +8,12 @@ class RmMaxController extends Controller
 {
     const reps = [1, 0.95, 0.90, 0.86, 0.82, 0.78, 0.74, 0.70, 0.65, 0.61, 0.57, 0.53 ];
 
+    
+
     public function index() 
     {
-        return view('rm_max.index');
+        $resultados = [];
+        return view('rm_max.index', $resultados);
     }
 
     public function rmCalculator(Request $request)
@@ -30,6 +33,6 @@ class RmMaxController extends Controller
             array_push($resultados, $calculadora);
         }
         
-        return $resultados;
+        return view('rm_max.index', $resultados);
     }
 }

@@ -1,0 +1,16 @@
+h1 {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 400px;
+    margin-bottom: 3%;
+    padding: 3%;
+}
+
+div.centrado {
+    padding-top: 5%;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}

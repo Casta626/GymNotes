@@ -6,9 +6,13 @@
         </a>
   
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          {{-- <li><a class="navbar-brand" href="/">
+            <img src="gymnotes.ico" alt="GymNotes" height="40" >
+          </a></li> --}}
           <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
           <li><a href="/ejercicios" class="nav-link px-2 text-white">Ejercicios</a></li>
           <li><a href="/valor-alimentos" class="nav-link px-2 text-white">Valor Alimentos</a></li>
+          <li><a href="/rm-max" class="nav-link px-2 text-white">Calculadora RM</a></li>
           {{-- <li><a href="/musculos" class="nav-link px-2 text-white">Musculos</a></li> --}}
     
           <li class="nav-item dropdown ">
@@ -27,11 +31,10 @@
               <li><a class="dropdown-item" href="/musculos#triceps">Triceps</a></li>
               <li><a class="dropdown-item" href="/musculos#brazos">Biceps</a></li>
               <li><a class="dropdown-item" href="/musculos#antebrazos">Antebrazos</a></li>
-              
             </ul>
           </li>
-          
-          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+          {{-- RETURN INDEX Y EL POST  --}}
+          {{-- <li><a href="#" class="nav-link px-2 text-white">About</a></li> --}}
         </ul>
   
         {{-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
