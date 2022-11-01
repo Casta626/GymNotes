@@ -12,13 +12,14 @@ class RmMaxController extends Controller
 
     public function index() 
     {
-        $resultados = [];
-        return view('rm_max.index', $resultados);
+        return view('rm_max.index');
     }
+
+    // ? A unas malas se hace en js 
 
     public function rmCalculator(Request $request)
     {
-        //https://www.vitonica.com/entrenamiento/como-calcular-los-porcentajes-de-cargas-submaximas
+        //https://www.vitonica.com/entrenamiento/como-calcular-los-porcentajes-de-cargas-submaximasº
 
         $reps = RmMaxController::reps;
         

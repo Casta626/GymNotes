@@ -9,8 +9,37 @@ h1 {
 }
 
 div.centrado {
-    padding-top: 5%;
-    align-content: center;
-    align-items: center;
+    display: flex;
     justify-content: center;
 }
+
+
+
+div.inicio{
+    margin-top: 8%;
+}
+
+.progress-section{text-align: center; padding: 80px 0px; }
+.progress-section h1{ margin-bottom:70px; color:#fff;}
+.progress-bars{ margin: auto; background: #fff; width: 120px; height: 120px; transform: rotate(45deg); position: relative;}
+.progress-bars h2 { line-height: 120px; text-align: center; transform: rotate(-45deg);}
+.progress-bars:before{position: absolute; content: ""; border: solid 5px #595959; border-width: 5px 0px 0px 5px; width: 30px; height: 30px; top: -9px; left: -9px; bottom: -9px; right: -9px; z-index: 10;}
+.progress-bars:after{position: absolute; content: ""; border: solid 5px #2bb0ef; border-width: 5px 5px 5px 5px; width: 140px; height: 140px; top: -9px; left: -9px; bottom: -9px; right: -9px;}
+
+.progress-bars-four{ margin: auto; background: #fff; width: 120px; height: 120px; transform: rotate(45deg); position: relative;}
+.progress-bars-four h2 { line-height: 120px; text-align: center; transform: rotate(-45deg);}
+.progress-bars-four:before{position: absolute; content: ""; border: solid 5px #595959; border-width: 5px 0px 0px 5px; width: 120px; height: 120px; top: -9px; left: -9px; bottom: -9px; right: -9px; z-index: 10;}
+.progress-bars-four:after{position: absolute; content: ""; border: solid 5px #2bb0ef; border-width: 5px 5px 5px 5px; width: 140px; height: 140px; top: -9px; left: -9px; bottom: -9px; right: -9px;}
+
+
+
+.progress-bars-six{ margin: auto; background: #fff; width: 120px; height: 120px; transform: rotate(45deg); position: relative;}
+.progress-bars-six h2 { line-height: 120px; text-align: center; transform: rotate(-45deg);}
+.progress-bars-six:before{position: absolute; content: ""; border: solid 5px #595959; border-width: 5px 0px 0px 5px; width: 90px; height: 90px; top: -9px; left: -9px; bottom: -9px; right: -9px; z-index: 10;}
+.progress-bars-six:after{position: absolute; content: ""; border: solid 5px #2bb0ef; border-width: 5px 5px 5px 5px; width: 140px; height: 140px; top: -9px; left: -9px; bottom: -9px; right: -9px;}
+
+
+.progress-bars-seven{ margin: auto; background: #fff; width: 120px; height: 120px; transform: rotate(45deg); position: relative;}
+.progress-bars-seven h2 { line-height: 120px; text-align: center; transform: rotate(-45deg);}
+.progress-bars-seven:before{position: absolute; content: ""; border: solid 5px #595959; border-width: 5px 0px 0px 5px; width: 70px; height: 70px; top: -9px; left: -9px; bottom: -9px; right: -9px; z-index: 10;}
+.progress-bars-seven:after{position: absolute; content: ""; border: solid 5px #2bb0ef; border-width: 5px 5px 5px 5px; width: 140px; height: 140px; top: -9px; left: -9px; bottom: -9px; right: -9px;}
