@@ -13,7 +13,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    {{-- <script type="text/javascript" src="{{ asset('js/rmmax.js')  }}"></script> --}}
+    <script type="text/javascript" src="{{ asset('js/rmmax.js')  }}"></script>
     <title>Calculadora-RM</title>
 </head>
 
@@ -180,7 +180,7 @@
 
         
 
-        {{-- * Barras de progreso
+        {{-- * Barras de progreso --}}
             <div class="progress">
 
                 <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0"
@@ -234,7 +234,7 @@
                     <span class="sr-only">45% completado</span>
                 </div>
 
-            </div> --}}
+            </div>
 
     </div>
     @endsection

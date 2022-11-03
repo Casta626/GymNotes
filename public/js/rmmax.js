@@ -47,3 +47,5 @@ document.querySelector('#submit').addEventListener('focus', function(e) {
     }
   });
 });
+
+// Deberia añadir un evento submit al formulario sobreescribiendo el evento por defecto

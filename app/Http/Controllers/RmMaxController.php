@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class RmMaxController extends Controller
 {
-    const reps = [1, 0.95, 0.90, 0.86, 0.82, 0.78, 0.74, 0.70, 0.65, 0.61, 0.57, 0.53 ];
+    const REPS = [1, 0.95, 0.90, 0.86, 0.82, 0.78, 0.74, 0.70, 0.65, 0.61, 0.57, 0.53 ];
 
     
 
@@ -21,7 +21,7 @@ class RmMaxController extends Controller
     {
         //https://www.vitonica.com/entrenamiento/como-calcular-los-porcentajes-de-cargas-submaximasº
 
-        $reps = RmMaxController::reps;
+        $reps = RmMaxController::REPS;
         
         $valor = $reps[$request->rep - 1];
         $rm = $request->peso;
