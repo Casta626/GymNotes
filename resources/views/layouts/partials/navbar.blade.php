@@ -28,8 +28,8 @@
               <li><hr class="dropdown-divider"></li>
               <li style="text-align: center">Brazos</li>
               <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/musculos#biceps">Biceps</a></li>
               <li><a class="dropdown-item" href="/musculos#triceps">Triceps</a></li>
-              <li><a class="dropdown-item" href="/musculos#brazos">Biceps</a></li>
               <li><a class="dropdown-item" href="/musculos#antebrazos">Antebrazos</a></li>
             </ul>
           </li>
