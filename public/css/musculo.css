@@ -34,7 +34,7 @@ tr,td,th{
 div.grupo{
     display: flex;
     text-align: center;
-  
+    height: fit-content;
 }
 
 a.reset-color-enlace{
@@ -48,11 +48,12 @@ a.reset-color-enlace:hover{
 div.carta{
     width: 32%;
     margin:0px auto;
-
+    min-height: max-content;
+    max-height: max-content;
 }
 
 img.carta{
-    height: 40%;
+    height: 500px;
 }
 
 a.espacio{

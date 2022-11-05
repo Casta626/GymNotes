@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/ejercicios', [EjercicioController::class, 'index']);
 
 Route::get('/rm-max', [RmMaxController::class, 'index']);
-Route::get('/rm-max', [RmMaxController::class, 'rmCalculator'])->name('rmmax.rmcalculator');
+Route::get('/rm-max2', [RmMaxController::class, 'rmCalculator'])->name('rmmax.rmcalculator');
 
 Route::get('/pruebas', [SeriesController::class, 'pruebas']);
 
