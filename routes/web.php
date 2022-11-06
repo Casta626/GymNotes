@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EjercicioController;
+use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\MusculosController;
 use App\Http\Controllers\RmMaxController;
 use App\Http\Controllers\SeriesController;
@@ -20,6 +21,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Route::get('/barcode_qr_reader', 'App\Http\Controllers\ImageUploadController@page');
+// Route::post('/barcode_qr_reader/upload', 'App\Http\Controllers\ImageUploadController@upload')->name('image.upload');
+Route::get('/barcode_qr_reader', [ImageUploadController::class, 'prueba']);
 
 Route::get('/ejercicios', [EjercicioController::class, 'index']);
 

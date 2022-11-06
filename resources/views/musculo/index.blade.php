@@ -32,7 +32,7 @@
         <div class="grupo">
             <div class="card carta">
                 <img class="card-img-top carta"
-                    src="https://c8.alamy.com/compes/e7tcne/pecho-pectoral-mayor-pectoralis-menor-anatomia-musculos-e7tcne.jpg"
+                    src="https://media.istockphoto.com/photos/chest-pectoralis-major-minor-anatomy-muscles-picture-id179538762?k=20&m=179538762&s=612x612&w=0&h=mg49byyQ8tmU2Afiz_g_00cgrdOJpS4X6Heu595AwDQ="
                     alt="Card image cap">
                 <div class="card-body" style="pa">
                     <h5 class="card-title">Pectoral Menor</h5>
