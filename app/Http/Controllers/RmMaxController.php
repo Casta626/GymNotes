@@ -12,7 +12,8 @@ class RmMaxController extends Controller
 
     public function index() 
     {
-        return view('rm_max.index');
+        $resultados =[];
+        return view('rm_max.index', ['resultados' => $resultados]);
     }
 
     // ? A unas malas se hace en js 
@@ -34,6 +35,6 @@ class RmMaxController extends Controller
             array_push($resultados, $calculadora);
         }
         
-        return view('rm_max.index', $resultados);
+        return view('rm_max.index', ['resultados' => $resultados]);
     }
 }
