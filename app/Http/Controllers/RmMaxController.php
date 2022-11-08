@@ -22,18 +22,21 @@ class RmMaxController extends Controller
     {
         //https://www.vitonica.com/entrenamiento/como-calcular-los-porcentajes-de-cargas-submaximasº
 
+        $resultados = [];
+        if (isset($request->rep) && isset($request->peso)){
         $reps = RmMaxController::REPS;
         
         $valor = $reps[$request->rep - 1];
         $rm = $request->peso;
         $rmMax = $rm/$valor;
 
-        $resultados = [];
+        
         
         for ($i=0; $i < count($reps); $i++){
             $calculadora = number_format((float)$rmMax * $reps[$i], 2, ',', '');
             array_push($resultados, $calculadora);
         }
+    }
         
         return view('rm_max.index', ['resultados' => $resultados]);
     }
