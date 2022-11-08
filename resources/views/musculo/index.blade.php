@@ -34,7 +34,7 @@
                 <img class="card-img-top carta"
                     src="https://media.istockphoto.com/photos/chest-pectoralis-major-minor-anatomy-muscles-picture-id179538762?k=20&m=179538762&s=612x612&w=0&h=mg49byyQ8tmU2Afiz_g_00cgrdOJpS4X6Heu595AwDQ="
                     alt="Card image cap">
-                <div class="card-body" style="pa">
+                <div class="card-body">
                     <h5 class="card-title">Pectoral Menor</h5>
                     <p class="card-text">El pectoral mayor trabaja directamente en el hombro, específicamente realizando
                         rotación interna y aducción, es decir dirige el brazo hacia la parte medial del cuerpo.</p>
@@ -83,10 +83,10 @@
         <div class="grupo">
             <div class="card carta">
                 <img class="card-img-top carta"
-                    src="https://c8.alamy.com/compes/e7tcne/pecho-pectoral-mayor-pectoralis-menor-anatomia-musculos-e7tcne.jpg"
+                    src="https://media.istockphoto.com/id/1313854778/de/foto/menschliches-muskelsystem-torso-muskeln-trapezius-muskel-anatomie.jpg?s=612x612&w=0&k=20&c=rd89GLIih4S0np4WPZxRz46xHgVhQ2rVppGHgNslLu8="
                     alt="Card image cap">
-                <div class="card-body" style="pa">
-                    <h5 class="card-title">MUSCULO</h5>
+                <div class="card-body">
+                    <h5 class="card-title">Trapecios</h5>
                     <p class="card-text">TEXTO</p>
                     <a href="https://www.fisioterapia-online.com/glosario/musculos-pectoral-mayor-y-menor">info:</a>
                 </div>
@@ -95,20 +95,20 @@
 
             <div class="card carta">
                 <img class="card-img-top carta"
-                    src="https://c8.alamy.com/compes/2ab596k/3d-prestados-ilustracion-del-musculo-pectoral-menor-2ab596k.jpg"
+                    src="https://c8.alamy.com/zoomses/9/ea225f8d69314184a1470a4d4593f6c1/e8cjbg.jpg"
                     alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">MUSCULO</h5>
+                    <h5 class="card-title">Dorsal Ancho</h5>
                     <p class="card-text">TEXTO</p>
                     <a href="https://www.cuidate-murcia.com/el-pectoral-menor-anatomia-funcion-y-sus-patologias/#:~:text=El%20pectoral%20menor%20es%20un,como%20el%20de%20hombros%20adelantados">info:</a>
                 </div>
             </div>
             <div class="card carta">
                 <img class="card-img-top carta"
-                    src="https://c8.alamy.com/compes/2bca7x6/musculo-serrato-anterior-ilustracion-2bca7x6.jpg"
+                    src="https://image.shutterstock.com/image-illustration/this-3d-illustration-shows-view-260nw-1849652074.jpg"
                     alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">MUSCULO</h5>
+                    <h5 class="card-title">Romboide</h5>
                     <p class="card-text">TEXTO</p>
                     <a href="https://www.cuidate-murcia.com/el-pectoral-menor-anatomia-funcion-y-sus-patologias/#:~:text=El%20pectoral%20menor%20es%20un,como%20el%20de%20hombros%20adelantados">info:</a>
                 </div>
@@ -134,7 +134,7 @@
                 <img class="card-img-top carta"
                     src="https://c8.alamy.com/compes/e7tcne/pecho-pectoral-mayor-pectoralis-menor-anatomia-musculos-e7tcne.jpg"
                     alt="Card image cap">
-                <div class="card-body" style="pa">
+                <div class="card-body">
                     <h5 class="card-title">MUSCULO</h5>
                     <p class="card-text">TEXTO</p>
                     <a href="https://www.fisioterapia-online.com/glosario/musculos-pectoral-mayor-y-menor">info:</a>
@@ -182,7 +182,7 @@
                 <img class="card-img-top carta"
                     src="https://c8.alamy.com/compes/e7tcne/pecho-pectoral-mayor-pectoralis-menor-anatomia-musculos-e7tcne.jpg"
                     alt="Card image cap">
-                <div class="card-body" style="pa">
+                <div class="card-body">
                     <h5 class="card-title">MUSCULO</h5>
                     <p class="card-text">TEXTO</p>
                     <a href="https://www.fisioterapia-online.com/glosario/musculos-pectoral-mayor-y-menor">info:</a>
@@ -231,7 +231,7 @@
                 <img class="card-img-top carta"
                     src="https://c8.alamy.com/compes/e7tcne/pecho-pectoral-mayor-pectoralis-menor-anatomia-musculos-e7tcne.jpg"
                     alt="Card image cap">
-                <div class="card-body" style="pa">
+                <div class="card-body">
                     <h5 class="card-title">MUSCULO</h5>
                     <p class="card-text">TEXTO</p>
                     <a href="https://www.fisioterapia-online.com/glosario/musculos-pectoral-mayor-y-menor">info:</a>
@@ -280,7 +280,7 @@
                 <img class="card-img-top carta"
                     src="https://c8.alamy.com/compes/e7tcne/pecho-pectoral-mayor-pectoralis-menor-anatomia-musculos-e7tcne.jpg"
                     alt="Card image cap">
-                <div class="card-body" style="pa">
+                <div class="card-body">
                     <h5 class="card-title">MUSCULO</h5>
                     <p class="card-text">TEXTO</p>
                     <a href="https://www.fisioterapia-online.com/glosario/musculos-pectoral-mayor-y-menor">info:</a>
@@ -329,7 +329,7 @@
                 <img class="card-img-top carta"
                     src="https://c8.alamy.com/compes/e7tcne/pecho-pectoral-mayor-pectoralis-menor-anatomia-musculos-e7tcne.jpg"
                     alt="Card image cap">
-                <div class="card-body" style="pa">
+                <div class="card-body">
                     <h5 class="card-title">MUSCULO</h5>
                     <p class="card-text">TEXTO</p>
                     <a href="https://www.fisioterapia-online.com/glosario/musculos-pectoral-mayor-y-menor">info:</a>
@@ -378,7 +378,7 @@
                 <img class="card-img-top carta"
                     src="https://c8.alamy.com/compes/e7tcne/pecho-pectoral-mayor-pectoralis-menor-anatomia-musculos-e7tcne.jpg"
                     alt="Card image cap">
-                <div class="card-body" style="pa">
+                <div class="card-body">
                     <h5 class="card-title">MUSCULO</h5>
                     <p class="card-text">TEXTO</p>
                     <a href="https://www.fisioterapia-online.com/glosario/musculos-pectoral-mayor-y-menor">info:</a>
