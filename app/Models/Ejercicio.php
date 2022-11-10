@@ -9,6 +9,8 @@ class Ejercicio extends Model
 {
     use HasFactory;
 
+    protected $table = 'ejercicios';
+
     public function musculo(){
         return $this->belongsTo(Musculo::class);
     }

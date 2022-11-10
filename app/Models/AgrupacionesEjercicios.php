@@ -9,7 +9,7 @@ class AgrupacionesEjercicios extends Model
 {
     use HasFactory;
 
-
+    protected $table = 'agrupaciones_ejercicios';
 
     //** Relaciones */
     public function rutinas(){

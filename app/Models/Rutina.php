@@ -9,6 +9,8 @@ class Rutina extends Model
 {
     use HasFactory;
 
+    protected $table = 'rutinas';
+
 
     //** Relaciones */
     public function agrupacionesEjercicios(){
