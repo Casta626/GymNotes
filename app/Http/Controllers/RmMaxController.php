@@ -20,7 +20,9 @@ class RmMaxController extends Controller
 
     public function rmCalculator(Request $request)
     {
-        //https://www.vitonica.com/entrenamiento/como-calcular-los-porcentajes-de-cargas-submaximasº
+        //https://www.vitonica.com/entrenamiento/como-calcular-los-porcentajes-de-cargas-submaximas
+        // https://echarts.apache.org/
+        // https://www.youtube.com/watch?v=wkui8RT5mFQ
 
         $resultados = [];
         if (isset($request->rep) && isset($request->peso)){
