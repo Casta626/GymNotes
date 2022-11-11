@@ -16,11 +16,24 @@ return new class extends Migration
         Schema::create('ejercicios', function (Blueprint $table) {
             $table->id();
             $table->foreignId('musculo_id')->references('id')->on('musculos');
-            $table->String('nombre');
-            $table->String('descripcion');
+            $table->string('nombre');
+            $table->string('descripcion');
+            $table->timestamps();
             //añadir un campo de tipo para ver si el ejercicio se hace con barras, macuernas, maquina o calistenico
             //meter una imgaen para cada ejercicio?, mas visible para el usuario
         });
+
+        /*
+        php artisan make:migrate create_ejercicios_musculos_table
+        Schema::create('ejercicios_musculos', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('musculo_id')->references('id')->on('musculos');
+            $table->foreignId('ejercicio_id')->references('id')->on('ejercicios');
+            $table->String('intensidad'); //Primario / Secundario
+            $table->timestamps();
+        });
+        
+        */
     }
 
     /**

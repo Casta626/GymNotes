@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('usuario_id')->references('id')->on('users');
             $table->foreignId('rutina_id')->references('id')->on('rutinas');
+            $table->date('fecha');
             $table->timestamps();
         });
     }

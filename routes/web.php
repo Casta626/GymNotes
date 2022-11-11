@@ -5,6 +5,7 @@ use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\MusculosController;
 use App\Http\Controllers\RmMaxController;
 use App\Http\Controllers\SeriesController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ValorAlimentosController;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Prueba;
@@ -25,6 +26,8 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/barcode_qr_reader', 'App\Http\Controllers\ImageUploadController@page');
 // Route::post('/barcode_qr_reader/upload', 'App\Http\Controllers\ImageUploadController@upload')->name('image.upload');
 Route::get('/barcode_qr_reader', [ImageUploadController::class, 'prueba']);
+
+Route::get('/usuarios', [UserController::class, 'getUsuarios']);
 
 Route::get('/ejercicios', [EjercicioController::class, 'index']);
 

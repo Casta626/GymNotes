@@ -24,6 +24,17 @@
     tr,td,th{
         padding: 1.5%;
     }
+
+    .prueba {
+        text-decoration: none;
+        color: white;
+    }
+
+    .prueba:hover {
+        text-decoration: none;
+        color: white;
+    }
+
 </style>
 </head>
 <body>
@@ -41,27 +52,41 @@
     <div>
         @foreach ($agrupaciones_ejercicios as $agEj)
 
-        <h1 >{{ ucwords(\Carbon\Carbon::parse(strftime($agEj->updated_at))->formatLocalized('%A %d de %B del %Y')) }}</h1>
+        <div>
+            <h1 >{{ ucwords(\Carbon\Carbon::parse(strftime($agEj->updated_at))->formatLocalized('%A %d de %B del %Y')) }}</h1>
+            {{ ucwords(\Carbon\Carbon::parse(strftime($agEj->created_at))->diffForHumans(null,null, 1, 1)) }}
+        </div>
         
         
         {{-- @if ($serie->nombre_musculo == "Espalda") --}}
         <table class="ejercicio">
             <tr class="bg-dark">
+                <th>Ejercicio</th>
                 <th>Músculo</th>
-                <th>Descripcion</th>
+                <th>Descripción</th>
                 <th>Peso</th>
                 <th>Repeticiones</th>
                 <th>Descanso</th>
-                <th>Hora</th>
+                {{-- <th>Hora</th> --}}
             </tr>
 
-            <tr class="bg-success" style="background-color: #4C2882">
+            {{-- <tr class="bg-success" style="background-color: #4C2882">
                 <td style="background-color: #4C2882">{{ $agEj->id }}</td>
                 <td style="background-color: #4C2882">{{ $agEj->descripcion}}</td>
                 <td style="background-color: #4C2882"> {{ $agEj->peso }}</td>
                 <td style="background-color: #4C2882">{{ $agEj->repeticiones }}</td>
                 <td style="background-color: #4C2882">{{ $agEj->tiempo_descanso }}</td>
                 <td style="background-color: #4C2882">{{ ucwords(\Carbon\Carbon::parse(strftime($agEj->created_at))->diffForHumans(null,null, 1, 1)) }}</td>
+            </tr> --}}
+
+            <tr class="bg-success" style="background-color: #4C2882">
+                <td style="background-color: #4C2882"> <a class="prueba" href="ejercicio/{{$agEj->id}}">Press Banca</a> </td>
+                <td style="background-color: #4C2882"> Pecho | hombro </td>
+                <td style="background-color: #4C2882"> descripcion </td>
+                <td style="background-color: #4C2882"> 80 </td>
+                <td style="background-color: #4C2882"> 2 </td>
+                <td style="background-color: #4C2882"> 2min </td>
+                {{-- <td style="background-color: #4C2882"></td> --}}
             </tr>
         </table>
             
