@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ean', function (Blueprint $table) {
+        Schema::create('ejercicios_musculos', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo_ean')->nullable();
+            $table->foreignId('musculo_id')->references('id')->on('musculos');
+            $table->foreignId('ejercicio_id')->references('id')->on('ejercicios');
+            $table->enum('tipo_activacion', ['Primario', 'Secundario'])->nullable(); //Primario / Secundario
+            $table->timestamps();
         });
     }
 
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ean');
+        Schema::dropIfExists('ejercicios_musculos');
     }
 };

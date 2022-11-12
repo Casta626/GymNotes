@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('series', function (Blueprint $table) {
             $table->id();
             $table->foreignId('ejercicio_maquina_id')->references('id')->on('ejercicio_maquinas');
-            $table->float('peso');
-            $table->float('repeticiones'); 
-            $table->float('tiempo_descanso');
-            $table->text('descripcion'); //Por si quiere añadir algo extra en la serie
+            $table->float('peso')->nullable();
+            $table->float('repeticiones')->nullable(); 
+            $table->float('tiempo_descanso')->nullable();
+            $table->text('descripcion')->nullable(); //Por si quiere añadir algo extra en la serie
             $table->timestamp('inicio')->nullable(); //Boton para que no tenga que estar entrando y saliendo de la app
             $table->timestamp('fin')->nullable(); //Boton para que no tenga que estar entrando y saliendo de la app
             $table->timestamps();

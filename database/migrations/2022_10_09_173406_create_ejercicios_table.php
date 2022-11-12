@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('ejercicios', function (Blueprint $table) {
             $table->id();
             $table->foreignId('musculo_id')->references('id')->on('musculos');
-            $table->string('nombre');
-            $table->string('descripcion');
+            $table->string('nombre')->nullable();
+            $table->string('descripcion')->nullable();
             $table->timestamps();
             //añadir un campo de tipo para ver si el ejercicio se hace con barras, macuernas, maquina o calistenico
             //meter una imgaen para cada ejercicio?, mas visible para el usuario

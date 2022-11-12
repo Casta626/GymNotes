@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('valor_alimentos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('alimento_id')->references('id')->on('alimentos');
-            $table->integer('energia');
-            $table->float('grasas');
+            $table->integer('energia')->nullable();
+            $table->float('grasas')->nullable();
             $table->float('g_saturadas')->nullable();
             $table->float('g_monosaturadas')->nullable();
             $table->float('g_poliinsaturadas')->nullable();

@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('musculos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('grupo_muscular');
+            $table->string('nombre')->nullable();
+            $table->string('grupo_muscular')->nullable();
             //meter una imgaen para cada musculo?, mas visible para el usuario
         });
     }
