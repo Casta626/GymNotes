@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EjercicioController;
+use App\Http\Controllers\GestionPesoController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\MusculosController;
 use App\Http\Controllers\RmMaxController;
@@ -30,9 +31,12 @@ Route::get('/barcode_qr_reader', [ImageUploadController::class, 'prueba']);
 Route::get('/usuarios', [UserController::class, 'getUsuarios']);
 
 Route::get('/ejercicios', [EjercicioController::class, 'index']);
+Route::get('/calendario', [EjercicioController::class, 'calendario']);
 
 // Route::get('/rm-max', [RmMaxController::class, 'index']);
 Route::get('/rm-max', [RmMaxController::class, 'rmCalculator'])->name('rmmax.rmcalculator');
+
+Route::get('/gestion-peso', [GestionPesoController::class, 'getGestionPeso'])->name('gestionPeso.calculadora');
 
 Route::get('/pruebas', [SeriesController::class, 'pruebas']);
 

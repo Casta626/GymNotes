@@ -11,8 +11,10 @@
           </a></li> --}}
           <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
           <li><a href="/ejercicios" class="nav-link px-2 text-white">Ejercicios</a></li>
+          <li><a href="/calendario" class="nav-link px-2 text-white">Calendario</a></li>
           <li><a href="/valor-alimentos" class="nav-link px-2 text-white">Valor Alimentos</a></li>
           <li><a href="/rm-max" class="nav-link px-2 text-white">Calculadora RM</a></li>
+          <li><a href="/gestion-peso" class="nav-link px-2 text-white">Gestión Peso</a></li>
           {{-- <li><a href="/musculos" class="nav-link px-2 text-white">Musculos</a></li> --}}
     
           <li class="nav-item dropdown ">

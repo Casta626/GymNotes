@@ -40,6 +40,6 @@ class RmMaxController extends Controller
         }
     }
         
-        return view('calendario', ['resultados' => $resultados]);
+        return view('rm_max.index', ['resultados' => $resultados]);
     }
 }

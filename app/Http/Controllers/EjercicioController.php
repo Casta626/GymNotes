@@ -24,4 +24,9 @@ class EjercicioController extends Controller
         // dd($usuarios);
         return view('ejercicio.index', compact(['usuarios', 'agrupaciones_ejercicios']));
     }
+    
+    public function calendario()
+    {
+        return view('calendario');
+    }
 }

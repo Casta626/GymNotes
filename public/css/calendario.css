@@ -848,10 +848,10 @@ body {
     width: 100vw;
     min-height: 100vh;
     overflow-x: hidden;
-    background-color: #fff0d2;
+    /* background-color: #fff0d2;
     background: linear-gradient(160deg, #fff0d2, #e4feff);
     background-position: 0 0;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
 h1 {
@@ -865,6 +865,9 @@ h1 {
     margin: 0 auto 15px;
     text-align: center;
     width: 100%;
+}
+.inicio {
+    margin-top: 50px;
 }
 
 p {
