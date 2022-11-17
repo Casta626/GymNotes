@@ -14,8 +14,8 @@
 </head>
 {{-- https://css-tricks.com/css-only-carousel/ --}}
 <body>
-  <div class="slides">
-    <div id="slide-1">
+  {{-- <div class="slides">
+    <div id="slide-1"> --}}
 		<h1 class="inicio">Entrenamiento</h1>
 		<p>Selecciona fecha y hora para continuar</p>
 		<div class="vanilla-calendar"></div>
@@ -28,9 +28,9 @@
 	
 		{{-- https://csshint.com/multi-step-html-forms/ --}}
 	
-		{{-- @extends('layouts.app-master')
+		@extends('layouts.app-master')
 	
-		@section('content') --}}
+		@section('content')
 		
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
@@ -71,7 +71,25 @@
 					calendarInfoTime.innerText = calendar.selectedTime;
 				});
 		</script>
-    </div>
+
+<div class="list-choice">
+	<div class="list-choice-title">Selecciona la actividad:</div>
+	<div class="list-choice-objects">
+		<label>
+			<input type="radio" name="month" /> <span class="dd">Entrenamiento de Pesas</span>
+		</label>
+		<label>
+			<input type="radio" name="month" /> <span class="dd">Deportes</span>
+		</label>
+		<label>
+			<input type="radio" name="month" /> <span class="dd">Clases guiadas</span>
+		</label>
+		<label>
+			<input type="radio" name="month" /> <span class="dd">Crossfit</span>
+		</label>
+	</div>
+</div>
+    {{-- </div>
     <div id="slide-2">
       2
     </div>
@@ -84,7 +102,8 @@
     <div id="slide-5">
       5
     </div>
-  </div>
+  </div> --}}
+  @endsection
 </div>
 </body>
 
