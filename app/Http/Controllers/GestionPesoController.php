@@ -12,38 +12,40 @@ class GestionPesoController extends Controller
     public function getGestionPeso(Request $request)
     {
         $datos = [];
-        $operacionTMB = (10 * $request->peso) + (6.25 * $request->altura) - (5 * $request->edad);
+        if (isset($request->altura) && isset($request->peso) && isset($request->edad) && isset($request->genero) && ($request->tipoTMB)) {
+            $operacionTMB = (10 * $request->peso) + (6.25 * $request->altura) - (5 * $request->edad);
 
-        $genero = [
-            'hombre' => +5,
-            'mujer'  => -161
-        ];
-
-        
-        $operacionGenero = $operacionTMB+$genero[$request->genero];
+            $genero = [
+                'hombre' => +5,
+                'mujer'  => -161
+            ];
 
 
-        $tipoTMB = [
-            'Nada' => 1.2, 
-            'Ligero' => 1.375, // 1-3 dias/semana
-            'Moderado' => 1.55, // 3-5 dias/semana
-            'Fuerte' => 1.735, // 6-7 dias/semana
-            'Muy Fuerte' => 1.9, // dos veces al día, entrenamientos duros
-        ];
+            $operacionGenero = $operacionTMB + $genero[$request->genero];
 
-        $caloriasTMB = round($operacionGenero * $tipoTMB[$request->tipoTMB]);
 
-        $volumen = $caloriasTMB + 300;
-        $definicion = $caloriasTMB - 300;
+            $tipoTMB = [
+                'Nada' => 1.2,
+                'Ligero' => 1.375, // 1-3 dias/semana
+                'Moderado' => 1.55, // 3-5 dias/semana
+                'Fuerte' => 1.735, // 6-7 dias/semana
+                'Muy Fuerte' => 1.9, // dos veces al día, entrenamientos duros
+            ];
 
-        $datos =[
-            'volumen' => $volumen,
-            'definicion' => $definicion,
-            'caloriasTMB' => $caloriasTMB,
-            'operacionTMB' => $operacionTMB,
-            'operacionGenero' => $operacionGenero,
-        ];
-        return view('gestionpeso', ['datos' => $datos] );
+            $caloriasTMB = round($operacionGenero * $tipoTMB[$request->tipoTMB]);
+
+            $volumen = $caloriasTMB + 300;
+            $definicion = $caloriasTMB - 300;
+
+            $datos = [
+                'volumen' => $volumen,
+                'definicion' => $definicion,
+                'caloriasTMB' => $caloriasTMB,
+                'operacionTMB' => $operacionTMB,
+                'operacionGenero' => $operacionGenero,
+            ];
+        }
+        return view('gestionpeso', ['datos' => $datos]);
         // return $datos;
     }
 }
