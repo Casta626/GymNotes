@@ -55,8 +55,7 @@
                 {{-- @include('layouts.partials.messages') --}}
 
                 <div class="form-group form-floating mb-3">
-                    <input id='peso' type="text" class="form-control" name="peso" value="{{ old('peso') }}" placeholder="peso"
-                        required="required" autofocus>
+                    <input id='peso' type="number" class="form-control" name="peso" value="{{ old('peso') }}" placeholder="peso" required="required|numeric|min:2" min="1" autofocus>
                     <label for="floatingName">Introduce el peso</label>
                     @if ($errors->has('peso'))
                         <span class="text-danger text-left">{{ $errors->first('peso') }}</span>
@@ -64,8 +63,8 @@
                 </div>
 
                 <div class="form-group form-floating mb-3">
-                    <input id='rep'type="text" class="form-control" name="rep" value="{{ old('rep') }}" placeholder="rep"
-                        required="required">
+                    <input id='rep'type="number" class="form-control" name="rep" value="{{ old('rep') }}" placeholder="rep"
+                        required="required" max="12" min="2">
                     <label for="floatingPassword">Introduce las repeticiones</label>
                     @if ($errors->has('rep'))
                         <span class="text-danger text-left">{{ $errors->first('rep') }}</span>
@@ -91,6 +90,14 @@
             </form>
 
             @if ($resultados != null)
+
+            <section class="progress-section" >
+                <div class="container">
+                    <div class="row">
+
+
+                        
+                </div>
                 
             
             {{-- Cirulares --}}
@@ -100,32 +107,35 @@
 
 
                         <div class="col-md-3">
-                            <div class="progress-bars">
+                            <div class="progress-bars-100">
                                 <h2>{{ $resultados[0]}}</h2>
                             </div>
-                            <h2 style="margin-top: 40px;margin-left:2%">44%</h2>
+                            <h2 style="margin-top: 40px;margin-left: 10px">100%</h2>
                             <!--progress-bars-->
                         </div>
 
                         <div class="col-md-3">
-                            <div class="progress-bars-four">
+                            <div class="progress-bars-95">
                                 <h2>{{ $resultados[1]}}</h2>
                             </div>
+                            <h2 style="margin-top: 40px;margin-left: 10px">95%</h2>
                             <!--progress-bars-->
                         </div>
 
                         <div class="col-md-3">
-                            <div class="progress-bars-six">
+                            <div class="progress-bars-90">
                                 <h2>{{ $resultados[2]}}</h2>
                             </div>
+                            <h2 style="margin-top: 40px;margin-left: 10px">90%</h2>
                             <!--progress-bars-->
                         </div>
 
 
                         <div class="col-md-3">
-                            <div class="progress-bars-seven">
+                            <div class="progress-bars-86">
                                 <h2>{{ $resultados[3]}}</h2>
                             </div>
+                            <h2 style="margin-top: 40px;margin-left: 10px">86%</h2>
                             <!--progress-bars-->
                         </div>
                     </div>
@@ -136,68 +146,74 @@
 
 
                         <div class="col-md-3">
-                            <div class="progress-bars">
+                            <div class="progress-bars-82">
                                 <h2>{{ $resultados[4]}}</h2>
                             </div>
-                            <h2 style="margin-top: 40px;margin-left:2%">44%</h2>
+                            <h2 style="margin-top: 40px;margin-left:2%">82%</h2>
                             <!--progress-bars-->
                         </div>
 
                         <div class="col-md-3">
-                            <div class="progress-bars-four">
+                            <div class="progress-bars-78">
                                 <h2>{{ $resultados[5]}}</h2>
                             </div>
+                            <h2 style="margin-top: 40px;margin-left: 10px">78%</h2>
                             <!--progress-bars-->
                         </div>
 
                         <div class="col-md-3">
-                            <div class="progress-bars-six">
+                            <div class="progress-bars-74">
                                 <h2>{{ $resultados[6]}}</h2>
                             </div>
+                            <h2 style="margin-top: 40px;margin-left: 10px">74%</h2>
                             <!--progress-bars-->
                         </div>
 
 
                         <div class="col-md-3">
-                            <div class="progress-bars-seven">
+                            <div class="progress-bars-70">
                                 <h2>{{ $resultados[7]}}</h2>
                             </div>
+                            <h2 style="margin-top: 40px;margin-left: 10px">70%</h2>
                             <!--progress-bars-->
                         </div>
                     </div>
                 </div>
 
-                <div class="container">
+                <div class="container" ">
                     <div class="row">
 
 
                         <div class="col-md-3">
-                            <div class="progress-bars">
+                            <div class="progress-bars-65">
                                 <h2>{{ $resultados[8]}}</h2>
                             </div>
-                            <h2 style="margin-top: 40px;margin-left:2%">44%</h2>
+                            <h2 style="margin-top: 40px;margin-left:2%">65%</h2>
                             <!--progress-bars-->
                         </div>
 
                         <div class="col-md-3">
-                            <div class="progress-bars-four">
+                            <div class="progress-bars-61">
                                 <h2>{{ $resultados[9]}}</h2>
                             </div>
+                            <h2 style="margin-top: 40px;margin-left: 10px">61%</h2>
                             <!--progress-bars-->
                         </div>
 
                         <div class="col-md-3">
-                            <div class="progress-bars-six">
+                            <div class="progress-bars-57">
                                 <h2>{{ $resultados[10]}}</h2>
                             </div>
+                            <h2 style="margin-top: 40px;margin-left: 10px">57%</h2>
                             <!--progress-bars-->
                         </div>
 
 
                         <div class="col-md-3">
-                            <div class="progress-bars-seven">
+                            <div class="progress-bars-53">
                                 <h2>{{ $resultados[11]}}</h2>
                             </div>
+                            <h2 style="margin-top: 40px;margin-left: 10px">53%</h2>
                             <!--progress-bars-->
                         </div>
                     </div>
