@@ -12,7 +12,7 @@ class GestionPesoController extends Controller
     public function getGestionPeso(Request $request)
     {
         $datos = [];
-        if (isset($request->altura) && isset($request->peso) && isset($request->edad) && isset($request->genero) && ($request->tipoTMB)) {
+        if (isset($request->altura) && isset($request->peso) && isset($request->edad) && ($request->tipoTMB) && ($request->genero)) {
             $operacionTMB = (10 * $request->peso) + (6.25 * $request->altura) - (5 * $request->edad);
 
             $genero = [
@@ -41,8 +41,6 @@ class GestionPesoController extends Controller
                 'volumen' => $volumen,
                 'definicion' => $definicion,
                 'caloriasTMB' => $caloriasTMB,
-                'operacionTMB' => $operacionTMB,
-                'operacionGenero' => $operacionGenero,
             ];
         }
         return view('gestionpeso', ['datos' => $datos]);

@@ -1,7 +1,7 @@
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .list-choice {
@@ -73,7 +73,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .list-choice input[type="radio"]:checked+span {
-    background: #dc3545 ;
+    background: #dc3545;
     position: absolute;
     top: 0em;
     border-radius: 0.2em;
@@ -91,12 +91,12 @@ input[type=number]::-webkit-outer-spin-button {
     max-height: 540px;
 }
 
-.list-choice-objects > label {
+.list-choice-objects>label {
     display: block;
 }
 
 * {
-    font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -128,5 +128,23 @@ h1 {
 div.centrado {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+}
+
+table{
+    border-radius: 100%;
+    text-align: center;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    padding:  2%;
+    margin-bottom: 25px;
+}
+tr,td,th{
+    padding: 1.5%;
+    
+}
+
+td {
+    background-color: white;
+    color: #000;
 }
