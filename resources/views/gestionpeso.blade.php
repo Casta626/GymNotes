@@ -119,9 +119,9 @@
 			{{-- Todo Lo comentado es para la versión móvil --}}
 			{{-- <th>Def. 0,75kg/S</th> --}}
 			{{-- <th>Def. 0,50kg/S</th> --}}
-			<th>Def. 0,25kg/S</th>
+			<th>Def. 0,25kg/Semana</th>
 			<th>Mantenimiento</th>
-			<th>Vol. 0,25kg/S</th>
+			<th>Vol. 0,25kg/Semana</th>
 			{{-- <th>Vol. 0,50kg/S</th> --}}
 			{{-- <th>Vol. 0,75kg/S</th> --}}
 		</tr>

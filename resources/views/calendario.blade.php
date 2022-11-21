@@ -27,6 +27,8 @@
 		{{-- https://levelup.gitconnected.com/create-a-multi-step-form-using-html-css-and-javascript-30aca5c062fc --}}
 	
 		{{-- https://csshint.com/multi-step-html-forms/ --}}
+
+		
 	
 		@extends('layouts.app-master')
 	
@@ -103,6 +105,8 @@
       5
     </div>
   </div> --}}
+
+  <div> Consultar <a href="https://github.com/alighasemzadeh/bap"> Bap</a></div>
   @endsection
 </div>
 </body>

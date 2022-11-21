@@ -1,61 +1,39 @@
-<header class="p-3 bg-danger text-white" style="position: fixed; top: 0; right:0; left:0;  z-index:99999">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-        </a>
-  
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          {{-- <li><a class="navbar-brand" href="/">
-            <img src="gymnotes.ico" alt="GymNotes" height="40" >
-          </a></li> --}}
-          <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
-          <li><a href="/ejercicios" class="nav-link px-2 text-white">Ejercicios</a></li>
-          <li><a href="/calendario" class="nav-link px-2 text-white">Calendario</a></li>
-          <li><a href="/valor-alimentos" class="nav-link px-2 text-white">Valor Alimentos</a></li>
-          <li><a href="/rm-max" class="nav-link px-2 text-white">Calculadora RM</a></li>
-          <li><a href="/gestion-peso" class="nav-link px-2 text-white">Gestión Peso</a></li>
-          {{-- <li><a href="/musculos" class="nav-link px-2 text-white">Musculos</a></li> --}}
-    
-          <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle text-white" href="/musculos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Musculos
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/musculos#pecho">Pecho</a></li>
-              <li><a class="dropdown-item" href="/musculos#espalda">Espalda</a></li>
-              <li><a class="dropdown-item" href="/musculos#hombro">Hombro</a></li>
-              <li><a class="dropdown-item" href="/musculos#abdomen">Abdomen</a></li>
-              <li><a class="dropdown-item" href="/musculos#piernas">Piernas</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li style="text-align: center">Brazos</li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/musculos#biceps">Biceps</a></li>
-              <li><a class="dropdown-item" href="/musculos#triceps">Triceps</a></li>
-              <li><a class="dropdown-item" href="/musculos#antebrazos">Antebrazos</a></li>
-            </ul>
-          </li>
-          {{-- RETURN INDEX Y EL POST  --}}
-          {{-- <li><a href="#" class="nav-link px-2 text-white">About</a></li> --}}
-        </ul>
-  
-        {{-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-        </form> --}}
-  
-        @auth
-          {{auth()->user()->name}}
-          <div class="text-end">
-            <a href="{{ route('logout.perform') }}" class="btn btn-light me-2">Salir</a>
-          </div>
-        @endauth
-  
-        @guest
-          <div class="text-end">
-            <a href="{{ route('login.perform') }}" class="btn btn-light me-2">Iniciar sesión</a>
-            <a href="{{ route('register.perform') }}" class="btn btn-warning">Registrarse</a>
-          </div>
-        @endguest
-      </div>
+{{-- https://getbootstrap.com/docs/5.0/components/navbar/ --}}
+<nav class="navbar navbar-expand-lg navbar-light bg-danger">
+  <div class="container-fluid">
+    <a href="/" class="nav-link px-2 text-white">Home</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
     </div>
-  </header>
+  </div>
+</nav>
