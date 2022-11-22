@@ -38,6 +38,12 @@
           {{-- RETURN INDEX Y EL POST  --}}
           {{-- <li><a href="#" class="nav-link px-2 text-white">About</a></li> --}}
         </ul>
+
+        {{-- @if ($pepe(count)>5)
+            @class(['p-4', 'font-bold' => true]) --}}
+            {{-- La clase se añade solo si pepe cuenta mayor que 5  |||| palmera-de-chocolate siempre es esta clase --}}
+            {{-- <div class="@if($pepe(count)>5) grupo @endif palmera-de-chocolate"> </div>
+        @endif --}}
   
         {{-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
           <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
