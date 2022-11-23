@@ -57,6 +57,9 @@
             {{ ucwords(\Carbon\Carbon::parse(strftime($agEj->created_at))->diffForHumans(null,null, 1, 1)) }}
         </div>
         
+        {{-- *Añadir Modales https://makitweb.com/dynamically-load-content-in-bootstrap-modal-laravel-9/ --}}
+        {{-- * Modales Boostrap https://getbootstrap.com/docs/5.2/components/modal/ --}}
+        {{-- Todo https://www.itsolutionstuff.com/post/laravel-9-fullcalendar-ajax-tutorial-exampleexample.html --}}
         
         {{-- @if ($serie->nombre_musculo == "Espalda") --}}
         <table class="ejercicio">
