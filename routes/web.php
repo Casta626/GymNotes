@@ -35,6 +35,7 @@ Route::get('/calendario', [EjercicioController::class, 'calendario']);
 
 // Route::get('/rm-max', [RmMaxController::class, 'index']);
 Route::get('/rm-max', [RmMaxController::class, 'rmCalculator'])->name('rmmax.rmcalculator');
+Route::get('/musculos2', [RmMaxController::class, 'musculos']);
 
 Route::get('/gestion-peso', [GestionPesoController::class, 'getGestionPeso'])->name('gestionPeso.calculadora');
 

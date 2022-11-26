@@ -1,66 +1,106 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    h1{
-        font-size-adjust: initial;
-        text-align: center;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        padding-top: 2%;
-        
-    }
-    table.ejercicio{
-        text-align: center;
-        width: 100%;
-        font-family: 'Roboto', sans-serif;
-        color: white;
-        padding:  2%;
-    }
-    tr,td,th{
-        padding: 1.5%;
-    }
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        h1 {
+            font-size-adjust: initial;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-top: 2%;
 
-    .prueba {
-        text-decoration: none;
-        color: white;
-    }
+        }
 
-    .prueba:hover {
-        text-decoration: none;
-        color: white;
-    }
+        table.ejercicio {
+            text-align: center;
+            width: 100%;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            padding: 2%;
+        }
 
-</style>
+        tr,
+        td,
+        th {
+            padding: 1.5%;
+        }
+
+        .prueba {
+            text-decoration: none;
+            color: white;
+        }
+
+        .prueba:hover {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
-    
-@extends('layouts.app-master')
 
-@section('content')
-{{ setlocale(LC_ALL,"es_ES")  }}
+    @extends('layouts.app-master')
 
-{{-- @php
+    @section('content')
+    {{ setlocale(LC_ALL,"es_ES") }}
+
+    {{-- @php
     $idUsuario = Auth::user()->id;
     $agruEj= App\Models\Serie::where('id',$idUsuario)->get();
-@endphp --}}
+    @endphp --}}
 
     <div>
+
+
+
         @foreach ($agrupaciones_ejercicios as $agEj)
 
         <div>
-            <h1 >{{ ucwords(\Carbon\Carbon::parse(strftime($agEj->updated_at))->formatLocalized('%A %d de %B del %Y')) }}</h1>
+            <h1>{{ ucwords(\Carbon\Carbon::parse(strftime($agEj->updated_at))->formatLocalized('%A %d de %B del %Y')) }}
+
+                <div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        style="float: right;">
+                        Nuevo entrenamiento
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header bg-primary">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: white">Selecciona fecha y tipo</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close" style="background-color: white"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-primary">Crear</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </h1>
             {{ ucwords(\Carbon\Carbon::parse(strftime($agEj->created_at))->diffForHumans(null,null, 1, 1)) }}
         </div>
-        
+
         {{-- *Añadir Modales https://makitweb.com/dynamically-load-content-in-bootstrap-modal-laravel-9/ --}}
         {{-- * Modales Boostrap https://getbootstrap.com/docs/5.2/components/modal/ --}}
         {{-- Todo https://www.itsolutionstuff.com/post/laravel-9-fullcalendar-ajax-tutorial-exampleexample.html --}}
-        
+
         {{-- @if ($serie->nombre_musculo == "Espalda") --}}
         <table class="ejercicio">
             <tr class="bg-dark">
@@ -70,6 +110,7 @@
                 <th>Peso</th>
                 <th>Repeticiones</th>
                 <th>Descanso</th>
+                <th>Editar</th>
                 {{-- <th>Hora</th> --}}
             </tr>
 
@@ -79,24 +120,60 @@
                 <td style="background-color: #4C2882"> {{ $agEj->peso }}</td>
                 <td style="background-color: #4C2882">{{ $agEj->repeticiones }}</td>
                 <td style="background-color: #4C2882">{{ $agEj->tiempo_descanso }}</td>
-                <td style="background-color: #4C2882">{{ ucwords(\Carbon\Carbon::parse(strftime($agEj->created_at))->diffForHumans(null,null, 1, 1)) }}</td>
+                <td style="background-color: #4C2882">{{
+                    ucwords(\Carbon\Carbon::parse(strftime($agEj->created_at))->diffForHumans(null,null, 1, 1)) }}</td>
             </tr> --}}
 
             <tr class="bg-success" style="background-color: #4C2882">
-                <td style="background-color: #4C2882"> <a class="prueba" href="ejercicio/{{$agEj->id}}">Press Banca</a> </td>
+                <td style="background-color: #4C2882"> <a class="prueba" href="ejercicio/{{$agEj->id}}">Press Banca</a>
+                </td>
                 <td style="background-color: #4C2882"> Pecho | hombro </td>
                 <td style="background-color: #4C2882"> descripcion </td>
                 <td style="background-color: #4C2882"> 80 </td>
                 <td style="background-color: #4C2882"> 2 </td>
                 <td style="background-color: #4C2882"> 2min </td>
+                <td style="background-color: #4C2882">
+                    <div style="color: black">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalEdit">
+                            +
+                        </button>
+    
+                        <!-- Modal -->
+                        <div class="modal fade" id="modalEdit" tabindex="-1"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5">Edita los campos</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body" style="text-align: start;">
+                                        <p>Ejercicio: press banca</p>
+                                        <p>Peso: 75(kg)</p>
+                                        <p>Repeticiones: 1</p>
+                                        <p>Descanso: 30 seg</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Crear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
                 {{-- <td style="background-color: #4C2882"></td> --}}
             </tr>
         </table>
-            
+
         @endforeach
 
-    
+
     </div>
-@endsection
+    @endsection
 </body>
+
 </html>

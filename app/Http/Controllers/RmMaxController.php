@@ -16,6 +16,12 @@ class RmMaxController extends Controller
         return view('calendario', ['resultados' => $resultados]);
     }
 
+    public function musculos() 
+    {
+        
+        return view('musculos');
+    }
+
     // ? A unas malas se hace en js 
 
     public function rmCalculator(Request $request)
