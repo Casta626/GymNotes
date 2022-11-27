@@ -39,6 +39,10 @@
             text-decoration: none;
             color: white;
         }
+
+        .b {
+            color: white;
+        }
     </style>
 </head>
 
@@ -144,7 +148,7 @@
                             aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <div class="modal-header">
+                                    <div class="modal-header bg-success b">
                                         <h1 class="modal-title fs-5">Edita los campos</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
