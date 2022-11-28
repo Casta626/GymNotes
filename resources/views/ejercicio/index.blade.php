@@ -66,10 +66,24 @@
 
     @auth
     <div>
-        @foreach ($series as $serie)
+        @foreach ($usuarios as $usuario)
+            <div>{{ $usuario }}</div>
+            <h1>ay</h1>
+        @foreach ($usuario->agrupacionesEjercicios as $agrupacionesEj)
+            <div>{{$agrupacionesEj}}</div>
+            <h1>ay</h1>
+            @foreach ($agrupacionesEj->ejercicioMaquina as $ejMaquina)
+                <div>{{$ejMaquina}}</div>
+                <h1>ay</h1>
+                @foreach ($ejMaquina->serie as $serie)
+                    <div>{{$serie}}</div>
+                    <h1>{{$serie->id}}</h1>
+                @endforeach
+            @endforeach
+        @endforeach
         <div>
-            <h1>{{ ucwords(\Carbon\Carbon::parse(strftime($serie->created_at))->formatLocalized('%A %d de %B del %Y')) }}
-            <h2>{{ $serie->nombre }}</h2>
+            <h1>{{ ucwords(\Carbon\Carbon::parse(strftime($usuario->created_at))->formatLocalized('%A %d de %B del %Y')) }}
+            <h2>{{ $usuario->email }}</h2>
                 <div>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
@@ -101,14 +115,14 @@
                 </div>
 
             </h1>
-            {{ ucwords(\Carbon\Carbon::parse(strftime($serie->created_at))->diffForHumans(null,null, 1, 1)) }}
+            {{ ucwords(\Carbon\Carbon::parse(strftime($usuario->created_at))->diffForHumans(null,null, 1, 1)) }}
         </div>
 
         {{-- *Añadir Modales https://makitweb.com/dynamically-load-content-in-bootstrap-modal-laravel-9/ --}}
         {{-- * Modales Boostrap https://getbootstrap.com/docs/5.2/components/modal/ --}}
         {{-- Todo https://www.itsolutionstuff.com/post/laravel-9-fullcalendar-ajax-tutorial-exampleexample.html --}}
 
-        {{-- @if ($serie->nombre_musculo == "Espalda") --}}
+        {{-- @if ($usuario->nombre_musculo == "Espalda") --}}
         <table class="ejercicio">
             <tr class="bg-dark">
                 <th>Ejercicio</th>
@@ -132,7 +146,7 @@
             </tr> --}}
 
             <tr class="bg-success" style="background-color: #4C2882">
-                <td style="background-color: #4C2882"> <a class="prueba" href="ejercicio/{{$serie->id}}">Press Banca</a>
+                <td style="background-color: #4C2882"> <a class="prueba" href="ejercicio/{{$usuario->id}}">Press Banca</a>
                 </td>
                 <td style="background-color: #4C2882"> Pecho | hombro </td>
                 <td style="background-color: #4C2882"> descripcion </td>
