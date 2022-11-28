@@ -29,4 +29,11 @@ class SeriesController extends Controller
 
         return User::find($id)->agrupaciones_ejercicios()->get();
     }
+
+    public function getSeries()
+    {
+        $series = User::with('agrupacionesEjercicios.ejercicioMaquina.serie');
+
+        return $series;
+    }
 }
