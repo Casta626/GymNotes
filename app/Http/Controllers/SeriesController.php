@@ -7,6 +7,7 @@ use App\Models\Ejercicio;
 use App\Models\EjercicioMaquina;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use function PHPSTORM_META\map;
 
@@ -32,8 +33,9 @@ class SeriesController extends Controller
 
     public function getSeries()
     {
-        $series = User::with('agrupacionesEjercicios.ejercicioMaquina.serie');
+        $usuario = Auth::id();
+        $series = User::where('id', $usuario)->with('agrupacionesEjercicios.ejercicioMaquina.serie')->get();
 
-        return $series;
+        return view ('ejercicio.index', ['series' => $series]);
     }
 }

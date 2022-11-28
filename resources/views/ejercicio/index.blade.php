@@ -57,16 +57,19 @@
     $idUsuario = Auth::user()->id;
     $agruEj= App\Models\Serie::where('id',$idUsuario)->get();
     @endphp --}}
+    
 
+    @guest
+
+        <h1>La de loguearte te la sabes? Máquina.</h1>
+    @endguest
+
+    @auth
     <div>
-
-
-
-        @foreach ($agrupaciones_ejercicios as $agEj)
-
+        @foreach ($series as $serie)
         <div>
-            <h1>{{ ucwords(\Carbon\Carbon::parse(strftime($agEj->updated_at))->formatLocalized('%A %d de %B del %Y')) }}
-
+            <h1>{{ ucwords(\Carbon\Carbon::parse(strftime($serie->created_at))->formatLocalized('%A %d de %B del %Y')) }}
+            <h2>{{ $serie->nombre }}</h2>
                 <div>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
@@ -98,7 +101,7 @@
                 </div>
 
             </h1>
-            {{ ucwords(\Carbon\Carbon::parse(strftime($agEj->created_at))->diffForHumans(null,null, 1, 1)) }}
+            {{ ucwords(\Carbon\Carbon::parse(strftime($serie->created_at))->diffForHumans(null,null, 1, 1)) }}
         </div>
 
         {{-- *Añadir Modales https://makitweb.com/dynamically-load-content-in-bootstrap-modal-laravel-9/ --}}
@@ -129,7 +132,7 @@
             </tr> --}}
 
             <tr class="bg-success" style="background-color: #4C2882">
-                <td style="background-color: #4C2882"> <a class="prueba" href="ejercicio/{{$agEj->id}}">Press Banca</a>
+                <td style="background-color: #4C2882"> <a class="prueba" href="ejercicio/{{$serie->id}}">Press Banca</a>
                 </td>
                 <td style="background-color: #4C2882"> Pecho | hombro </td>
                 <td style="background-color: #4C2882"> descripcion </td>
@@ -178,6 +181,7 @@
 
     </div>
     @endsection
+    @endauth
 </body>
 
 </html>
