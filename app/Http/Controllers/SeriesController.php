@@ -38,4 +38,8 @@ class SeriesController extends Controller
 
         return view ('ejercicio.index', ['usuarios' => $usuarios]);
     }
+
+    public function postSerie(Request $request){
+        $ejercicioMaquina = $request->ejercicio_maquina_id;
+    }
 }

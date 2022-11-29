@@ -29,5 +29,7 @@ class Serie extends Model
             'id' // Local key on the environments table...
         );
     }
+
+    public  function getMusculosByEjercicio
     
 }

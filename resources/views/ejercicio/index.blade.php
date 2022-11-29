@@ -46,7 +46,7 @@
     </style>
 </head>
 
-<body>
+<body style="width: 100%">
 
     @extends('layouts.app-master')
 
@@ -66,58 +66,45 @@
 
     @auth
     <div>
-        @foreach ($usuarios as $usuario)
-            <div>{{ $usuario }}</div>
-            <h1>ay</h1>
-        @foreach ($usuario->agrupacionesEjercicios as $agrupacionesEj)
-            <div>{{$agrupacionesEj}}</div>
-            <h1>ay</h1>
-            @foreach ($agrupacionesEj->ejercicioMaquina as $ejMaquina)
-                <div>{{$ejMaquina}}</div>
-                <h1>ay</h1>
-                @foreach ($ejMaquina->serie as $serie)
-                    <div>{{$serie}}</div>
-                    <h1>{{$serie->id}}</h1>
-                @endforeach
-            @endforeach
-        @endforeach
+@php
+    $contador = 0;
+@endphp
         <div>
-            <h1>{{ ucwords(\Carbon\Carbon::parse(strftime($usuario->created_at))->formatLocalized('%A %d de %B del %Y')) }}
-            <h2>{{ $usuario->email }}</h2>
-                <div>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        style="float: right;">
-                        Nuevo entrenamiento
-                    </button>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                style="float: right;">
+                Nuevo entrenamiento
+            </button>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header bg-primary">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: white">Selecciona fecha y tipo</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close" style="background-color: white"></button>
-                                </div>
-                                <div class="modal-body">
-                                    ...
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="btn btn-primary">Crear</button>
-                                </div>
-                            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: white">Selecciona fecha y tipo</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close" style="background-color: white"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger"
+                                data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Crear</button>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
+        @foreach ($usuarios as $usuario)
+        <div>
+            <h1>{{ ucwords(\Carbon\Carbon::parse(strftime($usuario->created_at))->formatLocalized('%A %d de %B del %Y')) }}
             </h1>
             {{ ucwords(\Carbon\Carbon::parse(strftime($usuario->created_at))->diffForHumans(null,null, 1, 1)) }}
         </div>
-
         {{-- *Añadir Modales https://makitweb.com/dynamically-load-content-in-bootstrap-modal-laravel-9/ --}}
         {{-- * Modales Boostrap https://getbootstrap.com/docs/5.2/components/modal/ --}}
         {{-- Todo https://www.itsolutionstuff.com/post/laravel-9-fullcalendar-ajax-tutorial-exampleexample.html --}}
@@ -134,65 +121,61 @@
                 <th>Editar</th>
                 {{-- <th>Hora</th> --}}
             </tr>
+        @foreach ($usuario->agrupacionesEjercicios as $agrupacionesEj)
+            @foreach ($agrupacionesEj->ejercicioMaquina as $ejMaquina)
+                @foreach ($ejMaquina->serie as $serie)
 
-            {{-- <tr class="bg-success" style="background-color: #4C2882">
-                <td style="background-color: #4C2882">{{ $agEj->id }}</td>
-                <td style="background-color: #4C2882">{{ $agEj->descripcion}}</td>
-                <td style="background-color: #4C2882"> {{ $agEj->peso }}</td>
-                <td style="background-color: #4C2882">{{ $agEj->repeticiones }}</td>
-                <td style="background-color: #4C2882">{{ $agEj->tiempo_descanso }}</td>
-                <td style="background-color: #4C2882">{{
-                    ucwords(\Carbon\Carbon::parse(strftime($agEj->created_at))->diffForHumans(null,null, 1, 1)) }}</td>
-            </tr> --}}
-
-            <tr class="bg-success" style="background-color: #4C2882">
-                <td style="background-color: #4C2882"> <a class="prueba" href="ejercicio/{{$usuario->id}}">Press Banca</a>
-                </td>
-                <td style="background-color: #4C2882"> Pecho | hombro </td>
-                <td style="background-color: #4C2882"> descripcion </td>
-                <td style="background-color: #4C2882"> 80 </td>
-                <td style="background-color: #4C2882"> 2 </td>
-                <td style="background-color: #4C2882"> 2min </td>
-                <td style="background-color: #4C2882">
-                    <div style="color: black">
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalEdit">
-                            +
-                        </button>
-    
-                        <!-- Modal -->
-                        <div class="modal fade" id="modalEdit" tabindex="-1"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header bg-success b">
-                                        <h1 class="modal-title fs-5">Edita los campos</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body" style="text-align: start;">
-                                        <p>Ejercicio: press banca</p>
-                                        <p>Peso: 75(kg)</p>
-                                        <p>Repeticiones: 1</p>
-                                        <p>Descanso: 30 seg</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn btn-primary">Crear</button>
+                <tr class="bg-success" style="background-color: #4C2882">
+                    <td style="background-color: #4C2882"> <a class="prueba" href="ejercicio/{{$usuario->id}}">Press Banca</a>
+                    </td>
+                    <td style="background-color: #4C2882"> Pecho | hombro </td>
+                    <td style="background-color: #4C2882"> {{ $serie->descripcion}} </td>
+                    <td style="background-color: #4C2882"> {{ $serie->peso}} </td>
+                    <td style="background-color: #4C2882"> {{ $serie->repeticiones}} </td>
+                    <td style="background-color: #4C2882"> {{ $serie->tiempo_descanso}} </td>
+                    <td style="background-color: #4C2882">
+                        <div style="color: black">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalEdit{{ $contador }}">
+                                +
+                            </button>
+        
+                            <!-- Modal -->
+                            <div class="modal fade" id="modalEdit{{ $contador }}" tabindex="-1"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-success b">
+                                            <h1 class="modal-title fs-5">Edita los campos</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body" style="text-align: start;">
+                                            <p>Ejercicio: press banca</p>
+                                            <p>Peso: {{ $serie->peso}} kg</p>
+                                            <p>Repeticiones: {{ $serie->repeticiones}}</p>
+                                            <p>Descanso: {{ $serie->tiempo_descanso}} seg</p>
+                                            <p>Descripción: {{ $serie->descripcion}}</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger"
+                                                data-bs-dismiss="modal">Cerrar</button>
+                                            <button type="button" class="btn btn-primary">Crear</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </td>
-                {{-- <td style="background-color: #4C2882"></td> --}}
-            </tr>
-        </table>
-
+                    </td>
+                </tr>
+            @php
+                $contador++;
+            @endphp
+                @endforeach
+            @endforeach
         @endforeach
-
-
+        @endforeach
+    </table>
     </div>
     @endsection
     @endauth
