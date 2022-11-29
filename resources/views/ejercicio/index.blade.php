@@ -160,7 +160,7 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger"
                                                 data-bs-dismiss="modal">Cerrar</button>
-                                            <button type="button" class="btn btn-primary">Crear</button>
+                                            <button type="button" class="btn btn-success">Editar</button>
                                         </div>
                                     </div>
                                 </div>

@@ -30,6 +30,8 @@ class Serie extends Model
         );
     }
 
-    public  function getMusculosByEjercicio
+    public  function getMusculosByEjercicio(){
+        
+    }
     
 }
