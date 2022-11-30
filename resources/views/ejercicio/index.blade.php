@@ -83,21 +83,11 @@
                         <div class="modal-header bg-primary">
                             <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: white">Selecciona fecha y
                                 tipo</h1>
-                                
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                                 style="background-color: white"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
-                                  Dropdown button
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    @foreach ($ejercicio as $ej)
-                                        <li><a class="dropdown-item" >{{ $ej->nombre }}</a></li>
-                                    @endforeach
-                                </ul>
-                              </div>
+                            ...
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
