@@ -57,18 +57,17 @@
     $idUsuario = Auth::user()->id;
     $agruEj= App\Models\Serie::where('id',$idUsuario)->get();
     @endphp --}}
-    
+
 
     @guest
-
-        <h1>La de loguearte te la sabes? Máquina.</h1>
+    <h1>La de loguearte te la sabes? Máquina.</h1>
     @endguest
 
     @auth
     <div>
-@php
-    $contador = 0;
-@endphp
+        @php
+        $contador = 0;
+        @endphp
         <div>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
@@ -82,16 +81,26 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header bg-primary">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: white">Selecciona fecha y tipo</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close" style="background-color: white"></button>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: white">Selecciona fecha y
+                                tipo</h1>
+                                
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                style="background-color: white"></button>
                         </div>
                         <div class="modal-body">
-                            ...
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
+                                  Dropdown button
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    @foreach ($ejercicio as $ej)
+                                        <li><a class="dropdown-item" >{{ $ej->nombre }}</a></li>
+                                    @endforeach
+                                </ul>
+                              </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger"
-                                data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                             <button type="button" class="btn btn-primary">Crear</button>
                         </div>
                     </div>
@@ -99,9 +108,13 @@
             </div>
         </div>
 
+       
+        
+
         @foreach ($usuarios as $usuario)
         <div>
-            <h1>{{ ucwords(\Carbon\Carbon::parse(strftime($usuario->created_at))->formatLocalized('%A %d de %B del %Y')) }}
+            <h1>{{ ucwords(\Carbon\Carbon::parse(strftime($usuario->created_at))->formatLocalized('%A %d de %B del %Y'))
+                }}
             </h1>
             {{ ucwords(\Carbon\Carbon::parse(strftime($usuario->created_at))->diffForHumans(null,null, 1, 1)) }}
         </div>
@@ -121,61 +134,67 @@
                 <th>Editar</th>
                 {{-- <th>Hora</th> --}}
             </tr>
-        @foreach ($usuario->agrupacionesEjercicios as $agrupacionesEj)
-            @foreach ($agrupacionesEj->ejercicioMaquina as $ejMaquina)
-                @foreach ($ejMaquina->serie as $serie)
 
-                <tr class="bg-success" style="background-color: #4C2882">
-                    <td style="background-color: #4C2882"> <a class="prueba" href="ejercicio/{{$usuario->id}}">Press Banca</a>
-                    </td>
-                    <td style="background-color: #4C2882"> Pecho | hombro </td>
-                    <td style="background-color: #4C2882"> {{ $serie->descripcion}} </td>
-                    <td style="background-color: #4C2882"> {{ $serie->peso}} </td>
-                    <td style="background-color: #4C2882"> {{ $serie->repeticiones}} </td>
-                    <td style="background-color: #4C2882"> {{ $serie->tiempo_descanso}} </td>
-                    <td style="background-color: #4C2882">
-                        <div style="color: black">
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalEdit{{ $contador }}">
-                                +
-                            </button>
-        
-                            <!-- Modal -->
-                            <div class="modal fade" id="modalEdit{{ $contador }}" tabindex="-1"
-                                aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header bg-success b">
-                                            <h1 class="modal-title fs-5">Edita los campos</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body" style="text-align: start;">
-                                            <p>Ejercicio: press banca</p>
-                                            <p>Peso: {{ $serie->peso}} kg</p>
-                                            <p>Repeticiones: {{ $serie->repeticiones}}</p>
-                                            <p>Descanso: {{ $serie->tiempo_descanso}} seg</p>
-                                            <p>Descripción: {{ $serie->descripcion}}</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger"
-                                                data-bs-dismiss="modal">Cerrar</button>
-                                            <button type="button" class="btn btn-success">Editar</button>
-                                        </div>
+            {{-- @foreach ($ejercicio_musculo as $ej_m)
+                <div>{{ $ej_m->musculo->nombre }}</div>
+            @endforeach --}}
+
+            @foreach ($usuario->agrupacionesEjercicios as $agrupacionesEj)
+            @foreach ($agrupacionesEj->ejercicioMaquina as $ejMaquina)
+            @foreach ($ejMaquina->serie as $serie)
+          
+            <tr class="bg-success" style="background-color: #4C2882">
+                <td style="background-color: #4C2882"> <a class="prueba" href="ejercicio#{{$ejMaquina->ejercicio->id}}"> {{ $ejMaquina->ejercicio->nombre }} </a>
+                </td>
+                
+                <td style="background-color: #4C2882"> {{ $ejMaquina->ejercicio->musculo->nombre }}  </td>  
+                <td style="background-color: #4C2882"> {{ $serie->descripcion}} </td>
+                <td style="background-color: #4C2882"> {{ $serie->peso}} </td>
+                <td style="background-color: #4C2882"> {{ $serie->repeticiones}} </td>
+                <td style="background-color: #4C2882"> {{ $serie->tiempo_descanso}} </td>
+                <td style="background-color: #4C2882">
+                    <div style="color: black">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                            data-bs-target="#modalEdit{{ $contador }}">
+                            +
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modalEdit{{ $contador }}" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-success b">
+                                        <h1 class="modal-title fs-5">Edita los campos</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body" style="text-align: start;">
+                                        <p>Ejercicio: {{ $ejMaquina->ejercicio->nombre }}</p>
+                                        <p>Peso: {{ $serie->peso}} kg</p>
+                                        <p>Repeticiones: {{ $serie->repeticiones}}</p>
+                                        <p>Descanso: {{ $serie->tiempo_descanso}} seg</p>
+                                        <p>Descripción: {{ $serie->descripcion}}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-success">Editar</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </td>
-                </tr>
+                    </div>
+                </td>
+            </tr>
             @php
-                $contador++;
+            $contador++;
             @endphp
-                @endforeach
             @endforeach
-        @endforeach
-        @endforeach
-    </table>
+            @endforeach
+            @endforeach
+            @endforeach
+        </table>
     </div>
     @endsection
     @endauth

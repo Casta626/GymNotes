@@ -5,16 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ejercicio extends Model
+class EjercicioMusculo extends Model
 {
     use HasFactory;
 
-    protected $table = 'ejercicios';
+    protected $table = 'ejercicios_musculos';
 
+    //** Relaciones */
     public function musculo(){
         return $this->belongsTo(Musculo::class);
     }
-    public function ejercicio_musculo(){
-        return $this->hasMany(EjercicioMusculo::class, 'ejercicio_id', 'id');
+
+    public function ejercicio(){
+        return $this->belongsTo(Ejercicio::class);
     }
+
 }

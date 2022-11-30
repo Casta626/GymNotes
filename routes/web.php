@@ -45,6 +45,8 @@ Route::get('/musculos', [MusculosController::class, 'index']);
 
 Route::get('/valor-alimentos', [ValorAlimentosController::class, 'index']);
 
+Route::get('/datos', [SeriesController::class, 'datos']);
+
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {   
     /**

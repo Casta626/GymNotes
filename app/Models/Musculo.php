@@ -18,4 +18,8 @@ class Musculo extends Model
     public function musculo(){
         return $this->hasMany(Musculo::class, 'musculo_id', 'id');
     }
+
+    public function ejercicio_musculo(){
+        return $this->hasMany(EjercicioMusculo::class, 'musculo_id', 'id');
+    }
 }

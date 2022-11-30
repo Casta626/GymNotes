@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AgrupacionesEjercicios;
 use App\Models\Ejercicio;
 use App\Models\EjercicioMaquina;
+use App\Models\EjercicioMusculo;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,11 +36,23 @@ class SeriesController extends Controller
     {
         $usuario = Auth::id();
         $usuarios = User::where('id', $usuario)->with('agrupacionesEjercicios.ejercicioMaquina.serie')->get();
+        $ejercicio = Ejercicio::all();
+        // $ejercicio_musculo = EjercicioMusculo::with('musculo')->with('ejercicio')->get();
 
-        return view ('ejercicio.index', ['usuarios' => $usuarios]);
+        return view ('ejercicio.index', ['usuarios' => $usuarios]
+         , ['ejercicio' => $ejercicio]
+        // , ['ejercicio_musculo' => $ejercicio_musculo]
+    );
     }
 
     public function postSerie(Request $request){
         $ejercicioMaquina = $request->ejercicio_maquina_id;
+    }
+
+    public function datos ()
+    {
+        $ejercicio_musculo = EjercicioMusculo::with('musculo')->with('ejercicio')->get();
+
+        return $ejercicio_musculo;
     }
 }
