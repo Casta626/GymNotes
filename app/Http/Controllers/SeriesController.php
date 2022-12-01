@@ -14,8 +14,8 @@ use function PHPSTORM_META\map;
 
 class SeriesController extends Controller
 {
-    
-    public function pruebas() 
+
+    public function pruebas()
     {
         $id = 2;
         setlocale(LC_ALL, 'es_ES');
@@ -30,6 +30,13 @@ class SeriesController extends Controller
         // dd($usuarios);
 
         return User::find($id)->agrupaciones_ejercicios()->get();
+    }   
+
+    public function ay()
+    {
+        $user = User::find(2);
+
+        $user->assignRole('Admin');
     }
 
     public function getSeries()
@@ -39,17 +46,20 @@ class SeriesController extends Controller
         $ejercicio = Ejercicio::all();
         // $ejercicio_musculo = EjercicioMusculo::with('musculo')->with('ejercicio')->get();
 
-        return view ('ejercicio.index', ['usuarios' => $usuarios]
-         , ['ejercicio' => $ejercicio]
-        // , ['ejercicio_musculo' => $ejercicio_musculo]
-    );
+        return view(
+            'ejercicio.index',
+            ['usuarios' => $usuarios],
+            ['ejercicio' => $ejercicio]
+            // , ['ejercicio_musculo' => $ejercicio_musculo]
+        );
     }
 
-    public function postSerie(Request $request){
+    public function postSerie(Request $request)
+    {
         $ejercicioMaquina = $request->ejercicio_maquina_id;
     }
 
-    public function datos ()
+    public function datos()
     {
         $ejercicio_musculo = EjercicioMusculo::with('musculo')->with('ejercicio')->get();
 

@@ -40,6 +40,8 @@ Route::get('/musculos2', [RmMaxController::class, 'musculos']);
 Route::get('/gestion-peso', [GestionPesoController::class, 'getGestionPeso'])->name('gestionPeso.calculadora');
 
 Route::get('/pruebas', [SeriesController::class, 'getSeries']);
+Route::get('/crear-ejercicios', [SeriesController::class, 'ay']);
+Route::get('/search/', 'EjercicioController@search')->name('search');
 
 Route::get('/musculos', [MusculosController::class, 'index']);
 

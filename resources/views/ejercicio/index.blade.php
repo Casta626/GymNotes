@@ -43,6 +43,107 @@
         .b {
             color: white;
         }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .list-choice {
+            width: 300px;
+            margin: 1em auto;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .list-choice input[type="radio"] {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .list-choice-title {
+            width: 100%;
+            display: block;
+            background: #dc3545;
+            text-align: center;
+            padding: 0.55em 1em;
+            box-sizing: border-box;
+            color: #FFF;
+            text-shadow: 0 1px 0 #CACACA;
+            border-radius: 0.2em;
+        }
+
+        .list-choice:hover .list-choice-title {
+            border-radius: 0.2em 0.2em 0 0;
+        }
+
+        .list-choice-objects label:nth-last-of-type(1) span {
+            border-radius: 0 0 0.2em 0.2em;
+        }
+
+        .list-choice input[type="radio"]+span {
+            color: #FFF;
+            background: #dc3545;
+            padding: 0.55em 1em;
+            display: block;
+            text-align: center;
+            box-sizing: border-box;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .list-choice-objects {
+            position: absolute;
+            top: 0;
+            padding-top: 2.1em;
+            box-sizing: border-box;
+            width: 100%;
+            overflow: hidden;
+            max-height: 0;
+            transition: all 250ms ease;
+        }
+
+        .list-choice:hover .list-choice-objects input[type="radio"]+span {
+            position: relative;
+            top: 0;
+            transition: all 250ms ease-in-out;
+        }
+
+        .list-choice:hover input[type="radio"]+span:hover {
+            background: #0b5ed7;
+        }
+
+        .list-choice:hover input[type="radio"]:checked+span:hover {
+            background: #74D68E;
+        }
+
+        .list-choice input[type="radio"]:checked+span {
+            background: #dc3545;
+            position: absolute;
+            top: 0em;
+            border-radius: 0.2em;
+        }
+
+        .list-choice:hover input[type="radio"]:checked+span {
+            border-radius: 0;
+        }
+
+        .list-choice:hover .list-choice-objects label:nth-last-of-type(1) input[type="radio"]:checked+span {
+            border-radius: 0 0 0.2em 0.2em;
+        }
+
+        .list-choice:hover .list-choice-objects {
+            max-height: 540px;
+        }
+
+        .list-choice-objects>label {
+            display: block;
+        }
+
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
     </style>
 </head>
 
@@ -87,7 +188,18 @@
                                 style="background-color: white"></button>
                         </div>
                         <div class="modal-body">
-                            ...
+                            <div class="list-choice" style="margin-bottom: 220px">
+                                <div class="list-choice-title">Ejercicios:</div>
+                                <div class="list-choice-objects">
+                                    @foreach ($ejercicio as $ej)
+                                    <label>
+                                        <input type="radio" name="tipoTMB" value="{{$ej->nombre}}" required="required" />
+                                        <span>{{$ej->nombre}}</span>
+                                    </label>
+                                    @endforeach
+                                    
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
@@ -98,8 +210,8 @@
             </div>
         </div>
 
-       
-        
+
+
 
         @foreach ($usuarios as $usuario)
         <div>
@@ -126,18 +238,19 @@
             </tr>
 
             {{-- @foreach ($ejercicio_musculo as $ej_m)
-                <div>{{ $ej_m->musculo->nombre }}</div>
+            <div>{{ $ej_m->musculo->nombre }}</div>
             @endforeach --}}
 
             @foreach ($usuario->agrupacionesEjercicios as $agrupacionesEj)
             @foreach ($agrupacionesEj->ejercicioMaquina as $ejMaquina)
             @foreach ($ejMaquina->serie as $serie)
-          
+
             <tr class="bg-success" style="background-color: #4C2882">
-                <td style="background-color: #4C2882"> <a class="prueba" href="ejercicio#{{$ejMaquina->ejercicio->id}}"> {{ $ejMaquina->ejercicio->nombre }} </a>
+                <td style="background-color: #4C2882"> <a class="prueba" href="ejercicio#{{$ejMaquina->ejercicio->id}}">
+                        {{ $ejMaquina->ejercicio->nombre }} </a>
                 </td>
-                
-                <td style="background-color: #4C2882"> {{ $ejMaquina->ejercicio->musculo->nombre }}  </td>  
+
+                <td style="background-color: #4C2882"> {{ $ejMaquina->ejercicio->musculo->nombre }} </td>
                 <td style="background-color: #4C2882"> {{ $serie->descripcion}} </td>
                 <td style="background-color: #4C2882"> {{ $serie->peso}} </td>
                 <td style="background-color: #4C2882"> {{ $serie->repeticiones}} </td>

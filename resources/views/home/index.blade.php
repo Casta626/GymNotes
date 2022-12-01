@@ -19,12 +19,18 @@
         <h2>Es de {{ auth()->user()->pais }}</h2>
         <h2>Su contraseña con hash es: {{ auth()->user()->password }}</h2>
         </div>
+
+        @can('ver-musculos')
+            <div>Sos admin</div>
+        @endcan
         @else
         <h1>Dashboard</h1>
         <p class="lead">Only authenticated users can access this section.</p>
         <a class="btn btn-lg btn-primary" href="https://codeanddeploy.com" role="button">View more tutorials here &raquo;</a>
         @endif
         @endauth
+
+        
 
         
     </div>

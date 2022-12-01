@@ -32,6 +32,9 @@
               <li><a class="dropdown-item" href="/musculos#antebrazos">Antebrazos</a></li>
           </ul>
         </li>
+        @can('crear-ejercicios')
+          <li><a href="/crear-ejercicios" class="nav-link px-2 text-white">Crear Ejercicios</a></li>
+          @endcan
       </ul>
       <form class="d-flex">
         @auth
