@@ -28,15 +28,18 @@
     @extends('layouts.app-master')
 
     @section('content')
+<form action="users" method="POST">
+    @csrf
+    
 
         <h1 class="inicio">Entrenamiento</h1>
         <p>Selecciona fecha y hora para continuar</p>
-        <div class="vanilla-calendar"></div>
+        <div class="vanilla-calendar" data-provide="datepicker" name = "data"></div>
         <div class="vanilla-calendar-info">
-            <span id="vanilla-calendar-info-date"></span>
-            <span id="vanilla-calendar-info-time"></span>
+            <span id="vanilla-calendar-info-date" data-provide="datepicker" name = "date"> </span>
+            <span id="vanilla-calendar-info-time" data-provide="datepicker" name = "time"></span>
         </div>
-
+        <input type="date" name="fecha" placeholder="ejercicio">
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const generateDate = (date) => {
@@ -94,21 +97,8 @@
                 </label>
             </div>
         </div>
-        {{-- </div>
-    <div id="slide-2">
-      2
-    </div>
-    <div id="slide-3">
-      3
-    </div>
-    <div id="slide-4">
-      4
-    </div>
-    <div id="slide-5">
-      5
-    </div>
-  </div> --}}
-
+        <button type="submit">Enter</button>
+</form>
         <div> Consultar <a href="https://github.com/alighasemzadeh/bap"> Bap</a></div>
 		{{-- Hacer el calendario antiguo para guardar los ejercicios --}}
     @endsection

@@ -33,12 +33,8 @@ class EjercicioController extends Controller
     }
 
     public function pruebas(Request $request){
-        $datos = [
-            'ejercicio_id' => $request->ejercicio_id,
-            'musculo_id' => $request->musculo_id,
-            'ejercicio' => $request->ejercicio
-        ];
-        return redirect('/crear-ejercicios2');
+        
+        return $request;
 
     }
 
@@ -52,14 +48,18 @@ class EjercicioController extends Controller
 
     public function postEjercicio(Request $request)
     {
-        if ($request->musculo_id) {
             $ejercicio = new Ejercicio();
             $ejercicio->musculo_id = $request->musculo_id;
-            $ejercicio->nombre = $request->nombre;
+            $ejercicio->nombre = $request->ejercicio;
             $ejercicio->descripcion = $request->descripcion;
             $ejercicio->foto = $request->foto;
             $ejercicio->save();
-        }
+        
+
+        $datos = [];
+        $ejercicios = Ejercicio::all();
+        $musculos = Musculo::all();
+        return view('admin.ejercicio', ['ejercicios' => $ejercicios, 'musculos' => $musculos, 'datos' => $datos]);
     }
 
     public function putEjercicio(Request $request)

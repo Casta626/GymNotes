@@ -24,7 +24,13 @@
         }
     </style>
 </head>
-
+{{-- <form action="users" method="POST">
+    @csrf
+    <input type="text" name="musculo_id" placeholder="musculo_id">
+    <input type="text" name="ejercicio_id" placeholder="ejercicio_id">
+    <input type="text" name="ejercicio" placeholder="ejercicio">
+    <button type="submit">Enter</button>
+</form> --}}
 <body>
     @extends('layouts.app-master')
 
@@ -35,13 +41,14 @@
     <div class="container">
         <div class="row">
 
-            <form action={{ route('crear.ejercicios') }} method="POST" class="col-md-4">
+            <form action=crear-ejercicios method="POST" class="col-md-4">
+                @csrf
                 <div>
                     <div>
                     <label class="es">Ejercicios</label>
-                    <select class="form-control select2">
+                    <select name="ejercicio_id" class="form-control select2">
                         @foreach ($ejercicios as $ejercicio)
-                        <option name="ejercicio_id" value="{{$ejercicio->id}}">{{$ejercicio->nombre}}</option>
+                        <option  value="{{$ejercicio->id}}">{{$ejercicio->nombre}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -63,8 +70,7 @@
                         <span class="text-danger text-left">{{ $errors->first('ejercicio') }}</span>
                         @endif
                     </div>
-                    <button href="crear-ejercicios" class="w-100 btn btn-lg btn-danger" 
-                    type="submit">Confirmar</button>
+                    <button class="w-100 btn btn-lg btn-danger" type="submit">Confirmar</button>
             </form>
 
         </div>

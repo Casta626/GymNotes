@@ -26,6 +26,10 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/barcode_qr_reader', 'App\Http\Controllers\ImageUploadController@page');
 // Route::post('/barcode_qr_reader/upload', 'App\Http\Controllers\ImageUploadController@upload')->name('image.upload');
+
+Route::post("/crear-ejercicios", [EjercicioController::class, 'postEjercicio']);
+Route::post("users", [EjercicioController::class, 'pruebas']);
+
 Route::get('/barcode_qr_reader', [ImageUploadController::class, 'prueba']);
 
 Route::get('/usuarios', [UserController::class, 'getUsuarios']);
@@ -41,7 +45,7 @@ Route::get('/gestion-peso', [GestionPesoController::class, 'getGestionPeso'])->n
 
 Route::get('/pruebas', [SeriesController::class, 'getSeries']);
 Route::get('/crear-ejercicios', [EjercicioController::class, 'getEjercicios']);
-Route::post('/crear-ejercicios', [EjercicioController::class, 'pruebas'])->name('crear.ejercicios');
+// Route::post("/crear-ejercicios", [EjercicioController::class, 'pruebas'])->name('crear.ejercicios');
 
 
 Route::get('/musculos', [MusculosController::class, 'index']);
