@@ -5,6 +5,10 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
         h1 {
             font-size-adjust: initial;
@@ -144,6 +148,15 @@
         * {
             font-family: 'Roboto', sans-serif;
         }
+
+        .select2-container .select2-selection--single {
+            height: 34px !important;
+        }
+
+        .select2-container--default .select2-selection--single {
+            border: 1px solid #ccc !important;
+            border-radius: 0px !important;
+        }
     </style>
 </head>
 
@@ -182,24 +195,37 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header bg-primary">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: white">Selecciona fecha y
-                                tipo</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: white">
+                                Selecciona fecha y tipo
+
+                            </h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                                 style="background-color: white"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="list-choice" style="margin-bottom: 220px">
-                                <div class="list-choice-title">Ejercicios:</div>
-                                <div class="list-choice-objects">
-                                    @foreach ($ejercicio as $ej)
-                                    <label>
-                                        <input type="radio" name="tipoTMB" value="{{$ej->nombre}}" required="required" />
-                                        <span>{{$ej->nombre}}</span>
-                                    </label>
-                                    @endforeach
-                                    
+                            <div style="z-index: 0">
+                                <link
+                                    href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css"
+                                    rel="stylesheet" />
+                                <script
+                                    src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js">
+                                </script>
+                                <div class="container">
+                                    <div class="row">
+                                        <form class="col-md-4">
+                                            <label>Ejercicios</label>
+                                            <select class="form-control select2">
+                                                @foreach ($ejercicios as $ejercicio)
+                                                <option value="{{$ejercicio->id}}">{{$ejercicio->nombre}}</option>
+                                                @endforeach
+                                            </select>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
+                            <script>
+                                $('.select2').select2();
+                            </script>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>

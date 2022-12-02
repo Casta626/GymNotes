@@ -34,7 +34,7 @@ class EjercicioController extends Controller
     public function getEjercicios()
     {
         $ejercicios = Ejercicio::all();
-        return $ejercicios;
+        return view('admin.ejercicio', ['ejercicios' => $ejercicios]);
     }
 
     public function postEjercicio(Request $request)

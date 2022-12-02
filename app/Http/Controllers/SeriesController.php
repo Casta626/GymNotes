@@ -43,13 +43,13 @@ class SeriesController extends Controller
     {
         $usuario = Auth::id();
         $usuarios = User::where('id', $usuario)->with('agrupacionesEjercicios.ejercicioMaquina.serie')->get();
-        $ejercicio = Ejercicio::all();
+        $ejercicios = Ejercicio::all();
         // $ejercicio_musculo = EjercicioMusculo::with('musculo')->with('ejercicio')->get();
 
         return view(
             'ejercicio.index',
             ['usuarios' => $usuarios],
-            ['ejercicio' => $ejercicio]
+            ['ejercicios' => $ejercicios]
             // , ['ejercicio_musculo' => $ejercicio_musculo]
         );
     }
