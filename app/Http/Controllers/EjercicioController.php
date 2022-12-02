@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AgrupacionesEjercicios;
 use App\Models\Ejercicio;
 use App\Models\EjercicioMaquina;
+use App\Models\Musculo;
 use App\Models\Rutina;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -31,10 +32,22 @@ class EjercicioController extends Controller
         return view('calendario');
     }
 
+    public function pruebas(Request $request){
+        $datos = [
+            'ejercicio_id' => $request->ejercicio_id,
+            'musculo_id' => $request->musculo_id,
+            'ejercicio' => $request->ejercicio
+        ];
+        return redirect('/crear-ejercicios2');
+
+    }
+
     public function getEjercicios()
     {
+        $datos = [];
         $ejercicios = Ejercicio::all();
-        return view('admin.ejercicio', ['ejercicios' => $ejercicios]);
+        $musculos = Musculo::all();
+        return view('admin.ejercicio', ['ejercicios' => $ejercicios, 'musculos' => $musculos, 'datos' => $datos]);
     }
 
     public function postEjercicio(Request $request)
@@ -47,7 +60,6 @@ class EjercicioController extends Controller
             $ejercicio->foto = $request->foto;
             $ejercicio->save();
         }
-        return $ejercicio;
     }
 
     public function putEjercicio(Request $request)

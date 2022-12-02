@@ -41,7 +41,8 @@ Route::get('/gestion-peso', [GestionPesoController::class, 'getGestionPeso'])->n
 
 Route::get('/pruebas', [SeriesController::class, 'getSeries']);
 Route::get('/crear-ejercicios', [EjercicioController::class, 'getEjercicios']);
-Route::get('/search/', 'EjercicioController@search')->name('search');
+Route::post('/crear-ejercicios', [EjercicioController::class, 'pruebas'])->name('crear.ejercicios');
+
 
 Route::get('/musculos', [MusculosController::class, 'index']);
 
