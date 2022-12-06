@@ -31,24 +31,46 @@ class SeriesController extends Controller
         // dd($usuarios);
 
         return User::find($id)->agrupaciones_ejercicios()->get();
-    }   
+    }
 
     public function postSeries(Request $request)
     {
         $usuario = Auth::id();
-        $agrupacion_ejercicio = AgrupacionesEjercicios::where('usuario_id', $usuario)->where('fecha', $request->fecha)->first();
-        $ejercicio = Ejercicio::where('nombre', $request->ejercicio)->first();
+        if ($request->tipo == "new") {
 
-        $ejercicio_maquina = new EjercicioMaquina();
-        $ejercicio_maquina->agrupacion_ejercicio_id = $agrupacion_ejercicio->id;
-        $ejercicio_maquina->ejercicio_id = $ejercicio->id;
-        $ejercicio_maquina->save();
+            $agrupacion_ejercicio = AgrupacionesEjercicios::where('usuario_id', $usuario)->where('fecha', $request->fecha)->first();
+            $ejercicio = Ejercicio::where('nombre', $request->ejercicio)->first();
 
-        // $ej = Ejercicio::where('agrupacion_ejercicio', $agrupacion_ejercicio->id)->where('ejercicio_id', $ejercicio->id)->first();
-        
-        $serie = new Serie();
-        $serie->ejercicio_maquina_id =$ejercicio_maquina->id;
-        $serie->save();
+            $ejercicio_maquina = new EjercicioMaquina();
+            $ejercicio_maquina->agrupacion_ejercicio_id = $agrupacion_ejercicio->id;
+            $ejercicio_maquina->ejercicio_id = $ejercicio->id;
+            $ejercicio_maquina->save();
+
+            // $ej = Ejercicio::where('agrupacion_ejercicio', $agrupacion_ejercicio->id)->where('ejercicio_id', $ejercicio->id)->first();
+
+            $serie = new Serie();
+            $serie->ejercicio_maquina_id = $ejercicio_maquina->id;
+            $serie->peso = $request->peso;
+            $serie->repeticiones = $request->repeticiones;
+            $serie->tiempo_descanso = $request->tiempo_descanso;
+            $serie->descripcion = $request->descripcion;
+            $serie->save();
+        }
+
+        if ($request->tipo == "edit") {
+            $serie = Serie::where('id', $request->serie_id)->first();
+            $serie->descripcion = $request->descripcion;
+            $serie->peso = $request->peso;
+            $serie->repeticiones = $request->repeticiones;
+            $serie->tiempo_descanso = $request->tiempo_descanso;
+            $serie->save();
+        }
+
+        if ($request->tipo == "delete"){
+            $serie = Serie::where('id', $request->serie_id)->first();
+            $serie->delete();
+        }
+
 
         $usuarios = User::where('id', $usuario)->with('agrupacionesEjercicios.ejercicioMaquina.serie')->get();
         $ejercicios = Ejercicio::all();
@@ -58,6 +80,10 @@ class SeriesController extends Controller
             ['usuarios' => $usuarios],
             ['ejercicios' => $ejercicios]
         );
+    }
+
+    public function putSeries(Request $request)
+    {
     }
 
     public function getSeries()

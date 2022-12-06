@@ -211,37 +211,41 @@
                             <div class="modal-body" style="text-align: start;">
                                 <form action="/ejercicios" method="post">
                                     @csrf
-                                    <input type="hidden" name="fecha" value="{{$agrupacionesEj->fecha}}" id="{{$agrupacionesEj->fecha}}">
+                                    <input type="hidden" name="fecha" value="{{$agrupacionesEj->fecha}}"
+                                        id="{{$agrupacionesEj->fecha}}">
                                     <input type="hidden" name="tipo" value="new">
                                     <input type="text" placeholder="Ejercicio" name="ejercicio">
+                                    <input type="text" name="descripcion" placeholder="Descripción">
+                                    <input type="number" name="peso" placeholder="Peso">
+                                    <input type="number" name="repeticiones" placeholder="Repeticiones">
+                                    <input type="number" name="tiempo_descanso" placeholder="Descanso">
                                     {{-- <div style="z-index: 999">
-                                    <link
-                                        href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css"
-                                        rel="stylesheet" />
-                                    <script
-                                        src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js">
-                                    </script>
-                                    <div class="container" style="z-index: 999">
-                                        <div class="row" style="z-index: 999">
-                                            <form class="col-md-4" style="z-index: 999">
-                                                <label style="z-index: 999">Ejercicios</label>
-                                                <select class="form-control select2" style="z-index: 999">
-                                                    @foreach ($ejercicios as $ejercicio)
-                                                    <option value="{{$ejercicio->id}}" style="z-index: 999">
-                                                        {{$ejercicio->nombre}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </form>
+                                        <link
+                                            href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css"
+                                            rel="stylesheet" />
+                                        <script
+                                            src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js">
+                                        </script>
+                                        <div class="container" style="z-index: 999">
+                                            <div class="row" style="z-index: 999">
+                                                <form class="col-md-4" style="z-index: 999">
+                                                    <label style="z-index: 999">Ejercicios</label>
+                                                    <select class="form-control select2" style="z-index: 999">
+                                                        @foreach ($ejercicios as $ejercicio)
+                                                        <option value="{{$ejercicio->id}}" style="z-index: 999">
+                                                            {{$ejercicio->nombre}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <script>
-                                    $('.select2').select2();
-                                </script> --}}                                    
+                                    <script>
+                                        $('.select2').select2();
+                                    </script> --}}
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger"
-                                    data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                                 <input type="submit" class="btn btn-primary"></button>
                                 </form>
                             </div>
@@ -250,9 +254,10 @@
                 </div>
             </div>
 
-            
 
-            <h1>{{ ucwords(\Carbon\Carbon::parse(strftime($agrupacionesEj->fecha))->formatLocalized('%A %d de %B del %Y')) }}</h1>
+
+            <h1>{{ ucwords(\Carbon\Carbon::parse(strftime($agrupacionesEj->fecha))->formatLocalized('%A %d de %B del
+                %Y')) }}</h1>
             {{ ucwords(\Carbon\Carbon::parse(strftime($agrupacionesEj->fecha))->diffForHumans(null,null, 1, 1)) }}
         </div>
         {{-- *Añadir Modales https://makitweb.com/dynamically-load-content-in-bootstrap-modal-laravel-9/ --}}
@@ -309,17 +314,20 @@
                                         <p>Descanso: {{ $serie->tiempo_descanso}} seg</p>
                                         <p>Descripción: {{ $serie->descripcion}}</p>
                                         <p>Fecha: {{ $agrupacionesEj->fecha }}</p>
-                                        <form action="/ejercicios" method="put">
+                                        <form action="/ejercicios" method="post">
                                             @csrf
-                                            <input type="hidden" name="fecha" value="{{$agrupacionesEj->fecha}}" id="{{$agrupacionesEj->fecha}}">
+                                            <input type="hidden" name="serie_id" value="{{$serie->id}}" id="{{$serie->id}}">
                                             <input type="hidden" name="tipo" value="edit">
-                                            <input type="text" placeholder="Ejercicio" name="ejercicio">
+                                            <input type="text" name="descripcion" placeholder="Descripción">
+                                            <input type="number" name="peso" placeholder="Peso">
+                                            <input type="number" name="repeticiones" placeholder="Repeticiones">
+                                            <input type="number" name="tiempo_descanso" placeholder="Descanso">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger"
                                             data-bs-dismiss="modal">Cerrar</button>
                                         <input type="submit" class="btn btn-success"></button>
-                                    </form>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -352,11 +360,16 @@
                                         <p>Repeticiones: {{ $serie->repeticiones}}</p>
                                         <p>Descanso: {{ $serie->tiempo_descanso}} seg</p>
                                         <p>Descripción: {{ $serie->descripcion}}</p>
+                                        <form action="/ejercicios" method="post">
+                                            @csrf
+                                            <input type="hidden" name="serie_id" value="{{$serie->id}}" id="{{$serie->id}}">
+                                            <input type="hidden" name="tipo" value="delete">
+                                            
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary"
-                                            data-bs-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn btn-danger">Borrar</button>
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                                        <input type="submit" class="btn btn-danger"></button>
+                                    </form>
                                     </div>
                                 </div>
                             </div>
