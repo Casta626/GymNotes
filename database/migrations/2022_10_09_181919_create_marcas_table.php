@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre')->nullable();
             $table->string('fecha_creacion')->nullable();
+            $table->timestamps();
         });
     }
 

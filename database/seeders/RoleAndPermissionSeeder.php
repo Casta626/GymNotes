@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
@@ -57,5 +58,8 @@ class RoleAndPermissionSeeder extends Seeder
             'editar-rutinas',
             'borrar-rutinas',
         ]);
+
+        $admin = User::first();
+        $admin->assignRole('Admin');
     }
 }

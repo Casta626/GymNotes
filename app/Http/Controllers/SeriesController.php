@@ -6,6 +6,7 @@ use App\Models\AgrupacionesEjercicios;
 use App\Models\Ejercicio;
 use App\Models\EjercicioMaquina;
 use App\Models\EjercicioMusculo;
+use App\Models\Serie;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,11 +33,31 @@ class SeriesController extends Controller
         return User::find($id)->agrupaciones_ejercicios()->get();
     }   
 
-    public function ay()
+    public function postSeries(Request $request)
     {
-        $user = User::find(2);
+        $usuario = Auth::id();
+        $agrupacion_ejercicio = AgrupacionesEjercicios::where('usuario_id', $usuario)->where('fecha', $request->fecha)->first();
+        $ejercicio = Ejercicio::where('nombre', $request->ejercicio)->first();
 
-        $user->assignRole('Admin');
+        $ejercicio_maquina = new EjercicioMaquina();
+        $ejercicio_maquina->agrupacion_ejercicio_id = $agrupacion_ejercicio->id;
+        $ejercicio_maquina->ejercicio_id = $ejercicio->id;
+        $ejercicio_maquina->save();
+
+        // $ej = Ejercicio::where('agrupacion_ejercicio', $agrupacion_ejercicio->id)->where('ejercicio_id', $ejercicio->id)->first();
+        
+        $serie = new Serie();
+        $serie->ejercicio_maquina_id =$ejercicio_maquina->id;
+        $serie->save();
+
+        $usuarios = User::where('id', $usuario)->with('agrupacionesEjercicios.ejercicioMaquina.serie')->get();
+        $ejercicios = Ejercicio::all();
+
+        return view(
+            'ejercicio.index',
+            ['usuarios' => $usuarios],
+            ['ejercicios' => $ejercicios]
+        );
     }
 
     public function getSeries()

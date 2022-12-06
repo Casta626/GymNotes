@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('ejercicios', function (Blueprint $table) {
-            $table->string('foto')->nullable();
+        Schema::create('alimentos_usuarios', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('usuario_id')->references('id')->on('users');
+            $table->foreignId('alimento_id')->references('id')->on('alimentos');
+            $table->date('fecha')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('ejercicios', function (Blueprint $table) {
-            $table->dropColumn('foto');
-        });
+        Schema::dropIfExists('alimentos_generales');
     }
 };

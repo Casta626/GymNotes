@@ -16,9 +16,18 @@ class MarcasSeeder extends Seeder
     public function run()
     {
         DB::table('marcas')->insert([
-            'id' => 1,
             'nombre' => 'Monster Energy',
             'fecha_creacion' => '2002',
+        ]);
+
+        DB::table('marcas')->insert([
+            'nombre' => 'Platano de Canarias',
+            'fecha_creacion' => '1500',
+        ]);
+
+        DB::table('marcas')->insert([
+            'nombre' => 'Principe',
+            'fecha_creacion' => '1890',
         ]);
     }
 }

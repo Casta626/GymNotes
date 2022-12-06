@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlimentosController;
 use App\Http\Controllers\EjercicioController;
 use App\Http\Controllers\GestionPesoController;
 use App\Http\Controllers\ImageUploadController;
@@ -28,13 +29,15 @@ use Illuminate\Support\Facades\Route;
 // Route::post('/barcode_qr_reader/upload', 'App\Http\Controllers\ImageUploadController@upload')->name('image.upload');
 
 Route::post("/crear-ejercicios", [EjercicioController::class, 'postEjercicio']);
-Route::post("users", [EjercicioController::class, 'pruebas']);
+Route::post("/users", [EjercicioController::class, 'pruebas']);
 
 Route::get('/barcode_qr_reader', [ImageUploadController::class, 'prueba']);
 
 Route::get('/usuarios', [UserController::class, 'getUsuarios']);
 
-Route::get('/ejercicios', [EjercicioController::class, 'index']);
+Route::get('/alimentos', [AlimentosController::class, 'getAlimentos']);
+
+// Route::get('/ejercicios', [EjercicioController::class, 'index']);
 Route::get('/calendario', [EjercicioController::class, 'calendario']);
 
 // Route::get('/rm-max', [RmMaxController::class, 'index']);
@@ -43,7 +46,10 @@ Route::get('/musculos2', [RmMaxController::class, 'musculos']);
 
 Route::get('/gestion-peso', [GestionPesoController::class, 'getGestionPeso'])->name('gestionPeso.calculadora');
 
-Route::get('/pruebas', [SeriesController::class, 'getSeries']);
+Route::get('/ejercicios', [SeriesController::class, 'getSeries']);
+Route::post('/ejercicios', [SeriesController::class, 'postSeries']);
+Route::put('/ejercicios', [SeriesController::class, 'controlSeries']);
+
 Route::get('/crear-ejercicios', [EjercicioController::class, 'getEjercicios']);
 // Route::post("/crear-ejercicios", [EjercicioController::class, 'pruebas'])->name('crear.ejercicios');
 

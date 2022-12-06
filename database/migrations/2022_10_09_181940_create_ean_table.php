@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('ean', function (Blueprint $table) {
             $table->id();
             $table->string('tipo_ean')->nullable();
+            $table->timestamps();
         });
     }
 
