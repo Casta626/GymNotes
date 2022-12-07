@@ -25,9 +25,10 @@
 <div style="display: flex;">
     @foreach ($alimentos as $alimento)
     <div style="width: 30%">
-        <form action="valor-alimentos" method="get">
-            <p class="oculto">id: <input type="text" name="id" value="{{$alimento->id}}"><p>
-        <input type="image" src="{{$fotos[$contador]}}" alt="{{$alimento->nombre}}" width="100%" height="80%" value="{{$alimento->id}}">
+        <form action="valor-alimentos" method="post">
+            @csrf
+            <p class="oculto">id: <input type="text" name="alimento_id" value="{{$alimento->id}}"><p>
+        <input type="image" src="{{$fotos[$contador]}}" alt="{{$alimento->nombre}}" width="100%" height="100%" value="{{$alimento->id}}">
     </form>
         <div class="centrado">{{$alimento->nombre}}</div>
         <div class="centrado">{{$alimento->descripcion}}</div>

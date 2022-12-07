@@ -204,7 +204,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header bg-primary b">
-                                <h1 class="modal-title fs-5">Seleccione el ejercicio que va a hacer:</h1>
+                                <h1 class="modal-title fs-5">Escribe el ejercicio que va a hacer:</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
@@ -364,7 +364,7 @@
                                             @csrf
                                             <input type="hidden" name="serie_id" value="{{$serie->id}}" id="{{$serie->id}}">
                                             <input type="hidden" name="tipo" value="delete">
-                                            
+
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>

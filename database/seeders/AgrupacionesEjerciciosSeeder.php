@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -20,6 +21,7 @@ class AgrupacionesEjerciciosSeeder extends Seeder
             'id' => 1,
             'usuario_id' => 1,
             'rutina_id' => 1,
+            'fecha' => Carbon::now('Y-m-d')
         ]);
     }
 }

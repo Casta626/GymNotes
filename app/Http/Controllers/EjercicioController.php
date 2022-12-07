@@ -9,6 +9,7 @@ use App\Models\Musculo;
 use App\Models\Rutina;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class EjercicioController extends Controller
@@ -32,10 +33,44 @@ class EjercicioController extends Controller
         return view('calendario');
     }
 
-    public function pruebas(Request $request){
-        
-        return $request;
+    public function postAgEj(Request $request)
+    {
+        $usuario = Auth::id();
 
+        if ($request->fecha) {
+
+            $agrupacion_ejercicio_buscar = AgrupacionesEjercicios::where('fecha', $request->fecha)
+                ->where('usuario_id', $usuario)->first();
+            if ($agrupacion_ejercicio_buscar == null && $request->crud=="new") {
+                $agrupacion_ejercicio = new AgrupacionesEjercicios();
+                $agrupacion_ejercicio->usuario_id = $usuario;
+                $agrupacion_ejercicio->rutina_id = 1;
+                $agrupacion_ejercicio->fecha = $request->fecha;
+                $agrupacion_ejercicio->save();
+
+                $usuarios = User::where('id', $usuario)->with('agrupacionesEjercicios.ejercicioMaquina.serie')->get();
+                $ejercicios = Ejercicio::all();
+
+                return view(
+                    'ejercicio.index',
+                    ['usuarios' => $usuarios],
+                    ['ejercicios' => $ejercicios]
+                );
+
+               
+            } 
+
+            if($agrupacion_ejercicio_buscar != null && $request->crud=="delete"){
+                $agrupacion_ejercicio_buscar->delete();
+                return view('calendario');
+            }
+        }
+    }
+
+    public function pruebas(Request $request)
+    {
+
+        return $request;
     }
 
     public function getEjercicios()
@@ -48,13 +83,13 @@ class EjercicioController extends Controller
 
     public function postEjercicio(Request $request)
     {
-            $ejercicio = new Ejercicio();
-            $ejercicio->musculo_id = $request->musculo_id;
-            $ejercicio->nombre = $request->ejercicio;
-            $ejercicio->descripcion = $request->descripcion;
-            $ejercicio->foto = $request->foto;
-            $ejercicio->save();
-        
+        $ejercicio = new Ejercicio();
+        $ejercicio->musculo_id = $request->musculo_id;
+        $ejercicio->nombre = $request->ejercicio;
+        $ejercicio->descripcion = $request->descripcion;
+        $ejercicio->foto = $request->foto;
+        $ejercicio->save();
+
 
         $datos = [];
         $ejercicios = Ejercicio::all();
@@ -80,8 +115,7 @@ class EjercicioController extends Controller
     {
         $ejercicio = Ejercicio::find($request->ejercicio_id);
         $ejercicio->delete();
-        
+
         return $ejercicio;
     }
-
 }

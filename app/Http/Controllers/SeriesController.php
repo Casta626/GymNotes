@@ -89,7 +89,9 @@ class SeriesController extends Controller
     public function getSeries()
     {
         $usuario = Auth::id();
-        $usuarios = User::where('id', $usuario)->with('agrupacionesEjercicios.ejercicioMaquina.serie')->get();
+        $usuarios = User::where('id', $usuario)
+        ->with('agrupacionesEjercicios.ejercicioMaquina.serie')
+        ->get();
         $ejercicios = Ejercicio::all();
         // $ejercicio_musculo = EjercicioMusculo::with('musculo')->with('ejercicio')->get();
 

@@ -39,6 +39,7 @@ Route::get('/alimentos', [AlimentosController::class, 'getAlimentos']);
 
 // Route::get('/ejercicios', [EjercicioController::class, 'index']);
 Route::get('/calendario', [EjercicioController::class, 'calendario']);
+Route::post('/calendario', [EjercicioController::class, 'postAgEj']);
 
 // Route::get('/rm-max', [RmMaxController::class, 'index']);
 Route::get('/rm-max', [RmMaxController::class, 'rmCalculator'])->name('rmmax.rmcalculator');
@@ -57,6 +58,7 @@ Route::get('/crear-ejercicios', [EjercicioController::class, 'getEjercicios']);
 Route::get('/musculos', [MusculosController::class, 'index']);
 
 Route::get('/valor-alimentos', [ValorAlimentosController::class, 'index']);
+Route::post('/valor-alimentos', [ValorAlimentosController::class, 'getValorAlimentos']);
 
 Route::get('/datos', [SeriesController::class, 'datos']);
 

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('ejercicio_maquinas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('agrupacion_ejercicio_id')->references('id')->on('agrupaciones_ejercicios');
+            $table->foreignId('agrupacion_ejercicio_id')->references('id')->on('agrupaciones_ejercicios')->onDelete('cascade');
             $table->foreignId('ejercicio_id')->references('id')->on('ejercicios');
             $table->string('descripcion')->nullable();
             $table->timestamps();

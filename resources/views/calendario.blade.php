@@ -30,10 +30,8 @@
             @extends('layouts.app-master')
 
             @section('content')
-            <form action="users" method="POST">
+            <form action="/calendario" method="post">
                 @csrf
-
-
                 <h1 class="inicio">Entrenamiento</h1>
                 <p>Selecciona fecha y hora para continuar</p>
                 <div class="vanilla-calendar" data-provide="datepicker" name="data"></div>
@@ -86,25 +84,27 @@
                 </script>
 
                 <div class="list-choice">
-                    <div class="list-choice-title">Selecciona la actividad:</div>
+                    <div class="list-choice-title">¿Qué desea hacer?</div>
                     <div class="list-choice-objects">
                         <label>
-                            <input type="radio" name="month" /> <span class="dd">Entrenamiento de Pesas</span>
+                            <input type="radio" name="crud" value="new" /> <span class="dd">Crear</span>
                         </label>
                         <label>
-                            <input type="radio" name="month" /> <span class="dd">Deportes</span>
+                            <input type="radio" name="crud" value="delete" /> <span class="dd">Borrar</span>
+                        </label>
+                        {{-- <label>
+                            <input type="radio" name="crud" value="" /> <span class="dd">Clases guiadas</span>
                         </label>
                         <label>
-                            <input type="radio" name="month" /> <span class="dd">Clases guiadas</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="month" /> <span class="dd">Crossfit</span>
-                        </label>
+                            <input type="radio" name="crud" value="" /> <span class="dd">Crossfit</span>
+                        </label> --}}
                     </div>
                 </div>
-                <button type="submit">Enter</button>
+                <input type="date" name="fecha">
+                <br>
+                <input type="submit" style="margin-top: 20px">
             </form>
-            <div> Consultar <a href="https://github.com/alighasemzadeh/bap"> Bap</a></div>
+            {{-- <div> Consultar <a href="https://github.com/alighasemzadeh/bap"> Bap</a></div> --}}
             {{-- Hacer el calendario antiguo para guardar los ejercicios --}}
             @endsection
         </div>

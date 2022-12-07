@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('series', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('ejercicio_maquina_id')->references('id')->on('ejercicio_maquinas');
+            $table->foreignId('ejercicio_maquina_id')->references('id')->on('ejercicio_maquinas')->onDelete('cascade');
             $table->float('peso')->nullable();
             $table->float('repeticiones')->nullable(); 
             $table->float('tiempo_descanso')->nullable();
