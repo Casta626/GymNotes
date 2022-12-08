@@ -180,7 +180,7 @@
 
 
     @guest
-    <h1>La de loguearte te la sabes? Máquina.</h1>
+    <h1>Para poder acceder a esta sección debes iniciar sesión</h1>
     @endguest
 
     @auth
@@ -386,8 +386,10 @@
         @endforeach
         @endforeach
     </div>
-    @endsection
+    
     @endauth
+
+    @endsection
 </body>
 
 </html>
