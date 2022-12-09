@@ -33,6 +33,12 @@ class EjercicioController extends Controller
         return view('calendario');
     }
 
+    public function ejercicio()
+    {
+        $ejercicios = Ejercicio::all();
+        return view('ejercicio', ['ejercicios' => $ejercicios]);
+    }
+
     public function postAgEj(Request $request)
     {
         $usuario = Auth::id();

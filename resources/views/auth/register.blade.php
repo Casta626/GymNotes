@@ -4,7 +4,7 @@
     <form method="post" action="{{ route('register.perform') }}">
 
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-        <img class="mb-4" src="{!! url('gymnotes.ico') !!}" alt="GymNotes logo" >
+        <a href="/"><img class="mb-4" src="{!! url('gymnotes.ico') !!}" alt="GymNotes logo" ></a>
         {{-- <link href="{{ asset('css/musculo.css')}}" rel="stylesheet" type="text/css"> --}}
         <h1 class="h3 mb-3 fw-normal">Registrate</h1>
 

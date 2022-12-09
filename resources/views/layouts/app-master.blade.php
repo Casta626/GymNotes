@@ -49,7 +49,7 @@
   </main>
 
   <script src="{!! url('assets/bootstrap/js/bootstrap.bundle.min.js') !!}"></script>
-
+  {{-- @include('layouts.partials.footer') --}}
 </body>
 
 </html>

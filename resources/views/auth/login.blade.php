@@ -4,7 +4,7 @@
     <form method="post" action="{{ route('login.perform') }}">
         
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-        <img class="mb-4" src="{!! url('gymnotes.ico') !!}" alt="GymNotes logo">
+        <a href="/"><img class="mb-4" src="{!! url('gymnotes.ico') !!}" alt="GymNotes logo"></a>
         
         <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
 

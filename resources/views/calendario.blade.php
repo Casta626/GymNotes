@@ -13,34 +13,31 @@
 
 
 </head>
-{{-- https://css-tricks.com/css-only-carousel/ --}}
 
 <body>
-    {{-- <div class="slides">
-        <div id="slide-1"> --}}
 
 
-            {{-- https://levelup.gitconnected.com/create-a-multi-step-form-using-html-css-and-javascript-30aca5c062fc
-            --}}
+    @extends('layouts.app-master')
 
-            {{-- https://csshint.com/multi-step-html-forms/ --}}
+    @section('content')
 
+    @guest
+    <h1>Para acceder a esta sección debes de iniciar sesión.</h1>
+    @endguest
 
+    @auth
 
-            @extends('layouts.app-master')
-
-            @section('content')
-            <form action="/calendario" method="post">
-                @csrf
-                <h1 class="inicio">Entrenamiento</h1>
-                <p>Selecciona fecha y hora para continuar</p>
-                <div class="vanilla-calendar" data-provide="datepicker" name="data"></div>
-                <div class="vanilla-calendar-info">
-                    <span id="vanilla-calendar-info-date" data-provide="datepicker" name="date"> </span>
-                    <span id="vanilla-calendar-info-time" data-provide="datepicker" name="time"></span>
-                </div>
-                <script>
-                    document.addEventListener('DOMContentLoaded', () => {
+    <form action="/calendario" method="post">
+        @csrf
+        <h1 class="inicio">Entrenamiento</h1>
+        <p>Selecciona fecha y hora para continuar</p>
+        <div class="vanilla-calendar" data-provide="datepicker" name="data"></div>
+        <div class="vanilla-calendar-info">
+            <span id="vanilla-calendar-info-date" data-provide="datepicker" name="date"> </span>
+            <span id="vanilla-calendar-info-time" data-provide="datepicker" name="time"></span>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
                 const generateDate = (date) => {
                     const year = date.getUTCFullYear();
                     let month = date.getUTCMonth() + 1;
@@ -81,33 +78,34 @@
                 //     return calendar.selectedTime.json()
                 // })
             });
-                </script>
+        </script>
 
-                <div class="list-choice">
-                    <div class="list-choice-title">¿Qué desea hacer?</div>
-                    <div class="list-choice-objects">
-                        <label>
-                            <input type="radio" name="crud" value="new" /> <span class="dd">Crear</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="crud" value="delete" /> <span class="dd">Borrar</span>
-                        </label>
-                        {{-- <label>
-                            <input type="radio" name="crud" value="" /> <span class="dd">Clases guiadas</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="crud" value="" /> <span class="dd">Crossfit</span>
-                        </label> --}}
-                    </div>
-                </div>
-                <input type="date" name="fecha">
-                <br>
-                <input type="submit" style="margin-top: 20px">
-            </form>
-            {{-- <div> Consultar <a href="https://github.com/alighasemzadeh/bap"> Bap</a></div> --}}
-            {{-- Hacer el calendario antiguo para guardar los ejercicios --}}
-            @endsection
+        <div class="list-choice">
+            <div class="list-choice-title">¿Qué desea hacer?</div>
+            <div class="list-choice-objects">
+                <label>
+                    <input type="radio" name="crud" value="new" /> <span class="dd">Crear</span>
+                </label>
+                <label>
+                    <input type="radio" name="crud" value="delete" /> <span class="dd">Borrar</span>
+                </label>
+                {{-- <label>
+                    <input type="radio" name="crud" value="" /> <span class="dd">Clases guiadas</span>
+                </label>
+                <label>
+                    <input type="radio" name="crud" value="" /> <span class="dd">Crossfit</span>
+                </label> --}}
+            </div>
         </div>
+        <input type="date" name="fecha">
+        <br>
+        <input type="submit" style="margin-top: 20px">
+    </form>
+    {{-- <div> Consultar <a href="https://github.com/alighasemzadeh/bap"> Bap</a></div> --}}
+    {{-- Hacer el calendario antiguo para guardar los ejercicios --}}
+    @endauth
+    @endsection
+
 </body>
 
 </html>

@@ -47,6 +47,8 @@ Route::get('/musculos2', [RmMaxController::class, 'musculos']);
 
 Route::get('/gestion-peso', [GestionPesoController::class, 'getGestionPeso'])->name('gestionPeso.calculadora');
 
+Route::get('/ejercicio', [EjercicioController::class, 'ejercicio']);
+
 Route::get('/ejercicios', [SeriesController::class, 'getSeries']);
 Route::post('/ejercicios', [SeriesController::class, 'postSeries']);
 Route::put('/ejercicios', [SeriesController::class, 'putSeries']);

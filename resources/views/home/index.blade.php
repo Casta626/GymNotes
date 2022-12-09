@@ -1,37 +1,44 @@
-@extends('layouts.app-master')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-    <div class="bg-light p-5 rounded">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <style>
+        p {
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    @extends('layouts.app-master')
+
+    @section('content')
+    <div class="p-5 rounded">
 
         @guest
-        <h1>Homepage</h1>
-        <p class="lead">Your viewing the home page. Please login to view the restricted data.</p>
+        <p>Puedes acceder a todas las herramientas menos <i>"Ejercicios"</i> y <i>"Calendario".</i></p>
+        <br>
+        <p>Para acceder a ellas debes estar registrado.</p>
+        <br>
+        <p>En <b><i>"Calendario"</i></b> añades o eliminas los días que vas a entrenar.</p>
+        <br>
+        <p>En <b><i>"Ejercicios"</i></b> añades o eliminas las series que realizas.</p>
         @endguest
 
         @auth
-        {{-- * Modo admin --}}
-        @if(auth()->user()->id ==2)
-        <div style="text-align: center">
-        <h1>Usted está en el modo admin</h1>
-        <h2>Hola, {{ auth()->user()->nombre }} {{ auth()->user()->apellido1 }} {{ auth()->user()->apellido2 }}</h2>
-        <h2>Su id es: {{ auth()->user()->id }} y es conocido como {{ auth()->user()->username }}</h2>
-        <h2>Su email es {{ auth()->user()->email }}, su teléfono es {{ auth()->user()->telefono }}</h2>
-        <h2>Es de {{ auth()->user()->pais }}</h2>
-        <h2>Su contraseña con hash es: {{ auth()->user()->password }}</h2>
-        </div>
-
-        @can('ver-musculos')
-            <div>Sos admin</div>
-        @endcan
-        @else
-        <h1>Dashboard</h1>
-        <p class="lead">Only authenticated users can access this section.</p>
-        <a class="btn btn-lg btn-primary" href="https://codeanddeploy.com" role="button">View more tutorials here &raquo;</a>
-        @endif
+        <p>¡Gracias por registrarte!</p>
+        <br>
+        <p>GymNotes es una página web que ha empezado como un Trabajo Final de Grado y que vamos a
+            utilizar mis amigos y yo pero la puede utilizar cualquiera.</p>
         @endauth
 
-        
 
-        
     </div>
-@endsection
+    @endsection
+</body>
+
+</html>
