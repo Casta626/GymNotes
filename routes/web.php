@@ -25,9 +25,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/crear-ejercicios', [EjercicioController::class, 'getEjercicios']);
+Route::group(['middleware' => ['can:ver-ejercicios']], function () {
+    Route::get('/crear-ejercicios', [EjercicioController::class, 'getEjercicios']);
 Route::post("/crear-ejercicios", [EjercicioController::class, 'postEjercicio']);
+});
+
 
 
 Route::get('/barcode_qr_reader', [ImageUploadController::class, 'prueba']);

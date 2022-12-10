@@ -84,16 +84,16 @@
             <div class="list-choice-title">¿Qué desea hacer?</div>
             <div class="list-choice-objects">
                 <label>
-                    <input type="radio" name="crud" value="new" /> <span class="dd">Crear</span>
+                    <input type="radio" name="crud" value="new" required="required"/> <span class="dd">Crear</span>
                 </label>
                 <label>
-                    <input type="radio" name="crud" value="delete" /> <span class="dd">Borrar</span>
+                    <input type="radio" name="crud" value="delete" required="required"/> <span class="dd">Borrar</span>
                 </label>
             </div>
         </div>
-        <input type="date" name="fecha">
+        <input type="date" name="fecha" required="required">
         <br>
-        <input type="submit" style="margin-top: 20px">
+        <input type="submit" class="btn btn-primary" style="margin-top: 20px">
     </form>
     @endauth
     @endsection

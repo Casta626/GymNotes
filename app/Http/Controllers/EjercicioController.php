@@ -30,6 +30,10 @@ class EjercicioController extends Controller
 
     public function ejercicio()
     {
+        $usuario = Auth::user()();
+        if (! $usuario->user()->can('ver-ejercicios')) {
+            abort(403);
+         }
         $ejercicios = Ejercicio::all();
         return view('ejercicio', ['ejercicios' => $ejercicios]);
     }
