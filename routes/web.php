@@ -25,25 +25,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/barcode_qr_reader', 'App\Http\Controllers\ImageUploadController@page');
-// Route::post('/barcode_qr_reader/upload', 'App\Http\Controllers\ImageUploadController@upload')->name('image.upload');
 
+Route::get('/crear-ejercicios', [EjercicioController::class, 'getEjercicios']);
 Route::post("/crear-ejercicios", [EjercicioController::class, 'postEjercicio']);
-Route::post("/users", [EjercicioController::class, 'pruebas']);
+
 
 Route::get('/barcode_qr_reader', [ImageUploadController::class, 'prueba']);
 
-Route::get('/usuarios', [UserController::class, 'getUsuarios']);
-
 Route::get('/alimentos', [AlimentosController::class, 'getAlimentos']);
 
-// Route::get('/ejercicios', [EjercicioController::class, 'index']);
 Route::get('/calendario', [EjercicioController::class, 'calendario']);
 Route::post('/calendario', [EjercicioController::class, 'postAgEj']);
 
-// Route::get('/rm-max', [RmMaxController::class, 'index']);
+
 Route::get('/rm-max', [RmMaxController::class, 'rmCalculator'])->name('rmmax.rmcalculator');
-Route::get('/musculos2', [RmMaxController::class, 'musculos']);
+Route::get('/musculos', [MusculosController::class, 'musculos']);
 
 Route::get('/gestion-peso', [GestionPesoController::class, 'getGestionPeso'])->name('gestionPeso.calculadora');
 
@@ -51,18 +47,10 @@ Route::get('/ejercicio', [EjercicioController::class, 'ejercicio']);
 
 Route::get('/ejercicios', [SeriesController::class, 'getSeries']);
 Route::post('/ejercicios', [SeriesController::class, 'postSeries']);
-Route::put('/ejercicios', [SeriesController::class, 'putSeries']);
 
-Route::get('/crear-ejercicios', [EjercicioController::class, 'getEjercicios']);
-// Route::post("/crear-ejercicios", [EjercicioController::class, 'pruebas'])->name('crear.ejercicios');
+Route::get('/musculos2', [MusculosController::class, 'index']);
 
-
-Route::get('/musculos', [MusculosController::class, 'index']);
-
-Route::get('/valor-alimentos', [ValorAlimentosController::class, 'index']);
 Route::post('/valor-alimentos', [ValorAlimentosController::class, 'getValorAlimentos']);
-
-Route::get('/datos', [SeriesController::class, 'datos']);
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {   
@@ -70,7 +58,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
      * Home Routes
      */
     Route::get('/', 'HomeController@index')->name('home.index');
-    // Route::get('/ejercicios', 'EjercicioController@index')->name('ejercicio.index');
 
     Route::group(['middleware' => ['guest']], function() {
         /**

@@ -13,29 +13,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script>
-        const enviarRM =  (e)=> {
-
-                e.prevent.default();
-                let peso = document.querySelector("#peso").value
-                let rep = document.querySelector("#rep").value
-
-                ajax({
-                        type: 'POST',
-                        url: 'rm-max2?peso='+ peso +'&rep='+ rep, //se envia y recibe de la funcion php "equation"
-                        success: function(response) {
-                            $('#resultadoEcuacion').text(response); //setea el resutado de la ecuacion en el blade
-                        },
-                        error: function(err) {
-                            console.log(err);
-                        }
-                    }
-
-                }
-            
-    </script>
-
-    {{-- <script type="text/javascript" src="{{ asset('js/rmmax.js')  }}"></script> --}}
     <title>Calculadora-RM</title>
 </head>
 
@@ -51,8 +28,6 @@
                 </div>
 
                 <h1>Descubre tu RM</h1>
-
-                {{-- @include('layouts.partials.messages') --}}
 
                 <div class="form-group form-floating mb-3">
                     <input id='peso' type="number" class="form-control" name="peso" value="{{ old('peso') }}" placeholder="peso" required="required|numeric|min:2" min="1" autofocus>
@@ -75,18 +50,6 @@
                     type="submit">Descubre
                     tu RM</button>
 
-                {{-- @if (count($resultados) > 0)
-            poner mas cajas de formulario.
-
-            @else
-
-            @endif --}}
-                {{-- <div>{{ $resultados[0] }}</div> --}}
-
-
-
-                {{-- @include('auth.partials.copy') --}}
-
             </form>
 
             @if ($resultados != null)
@@ -94,11 +57,7 @@
             <section class="progress-section" >
                 <div class="container">
                     <div class="row">
-
-
-                        
                 </div>
-                
             
             {{-- Cirulares --}}
             <section class="progress-section" >
@@ -220,64 +179,6 @@
                 </div>
             </section>
             @endif
-
-
-            {{-- * Barras de progreso
-            <div class="progress">
-
-                <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0"
-                    aria-valuemax="100">25%
-                    <script>
-                        $(".progress-bar").animate({
-                                width: "25%",
-                        }, 2500);
-                    </script>
-                    <div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-success" role="progressbar""
-                    aria-valuenow=" 25" aria-valuemin="0" aria-valuemax="100">93%
-                    <script>
-                        $(".progress-bar").animate({
-                                width: "93%",
-                        }, 2500);
-                    </script>
-                </div>
-
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-info" role="progressbar""
-                    aria-valuenow=" 50" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-warning" role="progressbar""
-                    aria-valuenow=" 75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" %" aria-valuenow="100"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0"
-                    aria-valuemax="100"></div>
-                <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-
-            <div class="progress progress-striped active">
-                <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
-                    style="width: 45%">
-                    <span class="sr-only">45% completado</span>
-                </div>
-
-            </div> --}}
-
         </div>
     @endsection
 </body>

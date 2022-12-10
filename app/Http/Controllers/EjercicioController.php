@@ -28,15 +28,15 @@ class EjercicioController extends Controller
         return view('ejercicio.index', compact(['usuarios', 'agrupaciones_ejercicios']));
     }
 
-    public function calendario()
-    {
-        return view('calendario');
-    }
-
     public function ejercicio()
     {
         $ejercicios = Ejercicio::all();
         return view('ejercicio', ['ejercicios' => $ejercicios]);
+    }
+
+    public function calendario()
+    {
+        return view('calendario');
     }
 
     public function postAgEj(Request $request)
@@ -73,11 +73,6 @@ class EjercicioController extends Controller
         }
     }
 
-    public function pruebas(Request $request)
-    {
-
-        return $request;
-    }
 
     public function getEjercicios()
     {

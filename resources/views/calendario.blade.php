@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1,width=device-width">
     <meta name="format-detection" content="telephone=no">
-    <title>Entrenamiento</title>
+    <title>Calendario</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script defer src="js/calendario.js"></script>
@@ -89,20 +89,12 @@
                 <label>
                     <input type="radio" name="crud" value="delete" /> <span class="dd">Borrar</span>
                 </label>
-                {{-- <label>
-                    <input type="radio" name="crud" value="" /> <span class="dd">Clases guiadas</span>
-                </label>
-                <label>
-                    <input type="radio" name="crud" value="" /> <span class="dd">Crossfit</span>
-                </label> --}}
             </div>
         </div>
         <input type="date" name="fecha">
         <br>
         <input type="submit" style="margin-top: 20px">
     </form>
-    {{-- <div> Consultar <a href="https://github.com/alighasemzadeh/bap"> Bap</a></div> --}}
-    {{-- Hacer el calendario antiguo para guardar los ejercicios --}}
     @endauth
     @endsection
 

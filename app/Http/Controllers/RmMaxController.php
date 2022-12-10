@@ -8,22 +8,6 @@ class RmMaxController extends Controller
 {
     const REPS = [1, 0.95, 0.90, 0.86, 0.82, 0.78, 0.74, 0.70, 0.65, 0.61, 0.57, 0.53 ];
 
-    
-
-    public function index() 
-    {
-        $resultados =[];
-        return view('calendario', ['resultados' => $resultados]);
-    }
-
-    public function musculos() 
-    {
-        
-        return view('musculos');
-    }
-
-    // ? A unas malas se hace en js 
-
     public function rmCalculator(Request $request)
     {
         //https://www.vitonica.com/entrenamiento/como-calcular-los-porcentajes-de-cargas-submaximas

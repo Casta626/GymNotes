@@ -17,7 +17,8 @@ class GestionPesoController extends Controller
 
             $genero = [
                 'hombre' => +5,
-                'mujer'  => -161
+                'mujer'  => -161,
+                'calorias_generales' => -70
             ];
 
 
@@ -44,6 +45,5 @@ class GestionPesoController extends Controller
             ];
         }
         return view('gestionpeso', ['datos' => $datos]);
-        // return $datos;
     }
 }

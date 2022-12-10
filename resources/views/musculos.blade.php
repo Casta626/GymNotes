@@ -21,7 +21,7 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
     </script>
-    <title>Calculadora-RM</title>
+    <title>Músculos</title>
 
 
     <style>

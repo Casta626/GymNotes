@@ -24,13 +24,7 @@
         }
     </style>
 </head>
-{{-- <form action="users" method="POST">
-    @csrf
-    <input type="text" name="musculo_id" placeholder="musculo_id">
-    <input type="text" name="ejercicio_id" placeholder="ejercicio_id">
-    <input type="text" name="ejercicio" placeholder="ejercicio">
-    <button type="submit">Enter</button>
-</form> --}}
+
 <body>
     @extends('layouts.app-master')
 

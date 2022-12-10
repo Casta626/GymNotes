@@ -9,8 +9,13 @@ class MusculosController extends Controller
 {
     public function index() 
     {
-        setlocale(LC_ALL, 'es_ES');
         $musculos = DB::table('musculos')->get();
         return view('musculo.index', ['musculos' => $musculos]);
+    }
+
+    public function musculos() 
+    {
+        setlocale(LC_ALL, 'es_ES');
+        return view('musculos');
     }
 }

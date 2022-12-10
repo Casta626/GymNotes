@@ -36,10 +36,10 @@
 			<a href="/"><img class="centrado" src="{!! url('gymnotes.ico') !!}" alt="GymNotes logo"></a>
 		</div>
 
-		<h1 style="margin-top: 20px;">Descubre tus calorías necesarias</h1>
-		<p style="margin-bottom: 25px;">Aquí puedes averiguar tus calorías de mantenimiento, con esa información puedes
-			saber cuantas calorías necesitarias
-			para hacer un volumen o definición, para ello agrega o resta 300 calorías a lo obtenido, para ganar o perder
+		<h1 style="margin-top: 20px;">Descubre tus kcal necesarias</h1>
+		<p style="margin-bottom: 25px;">Aquí puedes averiguar tus kcal de mantenimiento, con esa información puedes
+			saber cuantas kcal necesitarias
+			para hacer un volumen o definición, para ello agrega o resta 300 kcal a lo obtenido, para ganar o perder
 			0,25 kg
 			a la semana, esta cantidad es acumulable pero no es recomendable ganar o perder mas de 1kg a la semana.
 		</p>
@@ -82,7 +82,7 @@
 				<div class="form-group form-floating mb-3">
 					<input id='altura' type="number" class="form-control" name="altura" value="{{ old('altura') }}"
 						placeholder="altura" required="required" min="2">
-					<label for="floatingPassword">Tus cm</label>
+					<label for="floatingPassword">Tu altura</label>
 					@if ($errors->has('altura'))
 					<span class="text-danger text-left">{{ $errors->first('altura') }}</span>
 					@endif
@@ -91,7 +91,7 @@
 				<div class="form-group form-floating mb-3">
 					<input id='edad' type="number" class="form-control" name="edad" value="{{ old('edad') }}"
 						placeholder="edad" required="required" min="2">
-					<label for="floatingPassword">Tus año</label>
+					<label for="floatingPassword">Tus años</label>
 					@if ($errors->has('edad'))
 					<span class="text-danger text-left">{{ $errors->first('edad') }}</span>
 					@endif
@@ -100,13 +100,16 @@
 			</div>
 
 			<div class="list-choice" style="margin-bottom: 20px">
-				<div class="list-choice-title">Cuerpo:</div>
+				<div class="list-choice-title">Kcal para:</div>
 				<div class="list-choice-objects">
 					<label>
 						<input type="radio" name="genero" value="hombre" required="required"/> <span>Hombre</span>
 					</label>
 					<label>
 						<input type="radio" name="genero" value="mujer" required="required"/> <span>Mujer</span>
+					</label>
+					<label>
+						<input type="radio" name="genero" value="calorias_generales" required="required"/> <span>Kcal. generales</span>
 					</label>
 				</div>
 			</div>
@@ -126,11 +129,11 @@
 			{{-- <th>Vol. 0,75kg/S</th> --}}
 		</tr>
 		<tr class="bg-success">
-			{{-- <td>{{ $datos['caloriasTMB'] - 900 }} calorías</td> --}}
-			{{-- <td>{{ $datos['caloriasTMB'] - 600 }} calorías</td> --}}
-			<td>{{ $datos['caloriasTMB'] - 300 }} calorías</td>
-			<td>{{ $datos['caloriasTMB'] }} calorías</td>
-			<td>{{ $datos['caloriasTMB'] + 300 }} calorías</td>
+			{{-- <td>{{ $datos['caloriasTMB'] - 900 }} kcal</td> --}}
+			{{-- <td>{{ $datos['caloriasTMB'] - 600 }} kcal</td> --}}
+			<td>{{ $datos['caloriasTMB'] - 300 }} kcal</td>
+			<td>{{ $datos['caloriasTMB'] }} kcal</td>
+			<td>{{ $datos['caloriasTMB'] + 300 }} kcal</td>
 			{{-- <td>{{ $datos['caloriasTMB'] + 600 }} calorías</td> --}}
 			{{-- <td>{{ $datos['caloriasTMB'] + 900 }} calorías</td> --}}
 		</tr>

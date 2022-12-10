@@ -24,6 +24,6 @@ class ValorAlimentosController extends Controller
             'https://static.condisline.com/resize_1280x1024/images/catalog/large/210544.jpg'
         ];
         return view('valor_alimentos.index', ['valor_alimento' => $valor_alimento, 'foto' => $fotos[$request->alimento_id-1]]);
-        // return $valor_alimento;
+        
     }
 }
