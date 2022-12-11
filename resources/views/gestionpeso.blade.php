@@ -12,8 +12,6 @@
 	<link href="css/gestionpeso.css" rel="stylesheet">
 
 	<style>
-		/* CHECKBOX TOGGLE SWITCH */
-		/* @apply rules for documentation, these do not work as inline style */
 		.toggle-checkbox:checked {
 			@apply: right-0 border-green-400;
 			right: 0;
@@ -73,7 +71,7 @@
 				<div class="form-group form-floating mb-3">
 					<input id='peso' type="number" class="form-control" name="peso" value="{{ old('peso') }}"
 						placeholder="peso" required="required|numeric|min:2" min="1" autofocus>
-					<label for="floatingName">Tus kg</label>
+					<label for="floatingName">Tu peso(kg)</label>
 					@if ($errors->has('peso'))
 					<span class="text-danger text-left">{{ $errors->first('peso') }}</span>
 					@endif
@@ -82,7 +80,7 @@
 				<div class="form-group form-floating mb-3">
 					<input id='altura' type="number" class="form-control" name="altura" value="{{ old('altura') }}"
 						placeholder="altura" required="required" min="2">
-					<label for="floatingPassword">Tu altura</label>
+					<label for="floatingPassword">Tu altura (cm)</label>
 					@if ($errors->has('altura'))
 					<span class="text-danger text-left">{{ $errors->first('altura') }}</span>
 					@endif
@@ -91,7 +89,8 @@
 				<div class="form-group form-floating mb-3">
 					<input id='edad' type="number" class="form-control" name="edad" value="{{ old('edad') }}"
 						placeholder="edad" required="required" min="2">
-					<label for="floatingPassword">Tus años</label>
+					<label for="floatingPassword">Tu edad (año)</label>
+					{{-- poner un @php en el media para que cambie el texto --}}
 					@if ($errors->has('edad'))
 					<span class="text-danger text-left">{{ $errors->first('edad') }}</span>
 					@endif
@@ -118,24 +117,14 @@
 		@if ($datos != null)
 	<table>
 		<tr class="bg-dark" style="padding: 25px">
-
-			{{-- Todo Lo comentado es para la versión móvil --}}
-			{{-- <th>Def. 0,75kg/S</th> --}}
-			{{-- <th>Def. 0,50kg/S</th> --}}
 			<th>Def. 0,25kg/Semana</th>
 			<th>Mantenimiento</th>
 			<th>Vol. 0,25kg/Semana</th>
-			{{-- <th>Vol. 0,50kg/S</th> --}}
-			{{-- <th>Vol. 0,75kg/S</th> --}}
 		</tr>
 		<tr class="bg-success">
-			{{-- <td>{{ $datos['caloriasTMB'] - 900 }} kcal</td> --}}
-			{{-- <td>{{ $datos['caloriasTMB'] - 600 }} kcal</td> --}}
 			<td>{{ $datos['caloriasTMB'] - 300 }} kcal</td>
 			<td>{{ $datos['caloriasTMB'] }} kcal</td>
 			<td>{{ $datos['caloriasTMB'] + 300 }} kcal</td>
-			{{-- <td>{{ $datos['caloriasTMB'] + 600 }} calorías</td> --}}
-			{{-- <td>{{ $datos['caloriasTMB'] + 900 }} calorías</td> --}}
 		</tr>
 	</table>
 	@endif
