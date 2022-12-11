@@ -17,6 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('nombre')->nullable();
             $table->string('grupo_muscular')->nullable();
+            $table->text('descripcion')->nullable();
+            $table->string('foto')->nullable();
+            $table->string('info')->nullable();
+            $table->timestamps();
             //meter una imgaen para cada musculo?, mas visible para el usuario
         });
     }
