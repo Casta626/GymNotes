@@ -21,7 +21,7 @@ class AgrupacionesEjerciciosSeeder extends Seeder
             'id' => 1,
             'usuario_id' => 1,
             'rutina_id' => 1,
-            'fecha' => Carbon::now('Y-m-d')
+            'fecha' => Carbon::now()
         ]);
     }
 }
