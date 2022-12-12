@@ -16,7 +16,7 @@
           <li><a href="/gestion-peso" class="nav-link px-2 text-white">Gestión Peso</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Musculos
+            Músculos
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/musculos#pecho">Pecho</a></li>

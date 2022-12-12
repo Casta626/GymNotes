@@ -106,7 +106,7 @@
                         alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Pectoral Menor</h5>
-                        <p class="card-text">Este musculo actúa en diversos movimientos realizados por el hombro, la
+                        <p class="card-text">Este músculo actúa en diversos movimientos realizados por el hombro, la
                             escapula, interviniendo incluso durante la respiración. Teniendo como principal función: la
                             de
                             tirar del hombro hacia abajo
@@ -126,7 +126,7 @@
                         alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Serrato Anterior</h5>
-                        <p class="card-text">Este musculo actúa en diversos movimientos realizados por el hombro, la
+                        <p class="card-text">Este músculo actúa en diversos movimientos realizados por el hombro, la
                             escapula, interviniendo incluso durante la respiración. Teniendo como principal función: la
                             de
                             tirar del hombro hacia abajo
@@ -190,7 +190,7 @@
                         alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Dorsales</h5>
-                        <p class="card-text">Este musculo actúa en diversos movimientos realizados por el hombro, la
+                        <p class="card-text">Este músculo actúa en diversos movimientos realizados por el hombro, la
                             escapula, interviniendo incluso durante la respiración. Teniendo como principal función: la
                             de
                             tirar del hombro hacia abajo
@@ -210,7 +210,7 @@
                         alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Romboide</h5>
-                        <p class="card-text">Este musculo actúa en diversos movimientos realizados por el hombro, la
+                        <p class="card-text">Este músculo actúa en diversos movimientos realizados por el hombro, la
                             escapula, interviniendo incluso durante la respiración. Teniendo como principal función: la
                             de
                             tirar del hombro hacia abajo
@@ -229,7 +229,7 @@
                         alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Cuadrado Lumbar</h5>
-                        <p class="card-text">Este musculo actúa en diversos movimientos realizados por el hombro, la
+                        <p class="card-text">Este músculo actúa en diversos movimientos realizados por el hombro, la
                             escapula, interviniendo incluso durante la respiración. Teniendo como principal función: la
                             de
                             tirar del hombro hacia abajo

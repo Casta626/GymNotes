@@ -48,7 +48,7 @@
                 </div>
 
                 <div>
-                    <label class="es">Musculos</label>
+                    <label class="es">Músculos</label>
                     <select name="musculo_id" class="form-control select2">
                         @foreach ($musculos as $musculo)
                         <option value="{{$musculo->id}}">{{$musculo->nombre}}</option>

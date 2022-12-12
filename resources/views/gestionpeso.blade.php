@@ -71,7 +71,7 @@
 				<div class="form-group form-floating mb-3">
 					<input id='peso' type="number" class="form-control" name="peso" value="{{ old('peso') }}"
 						placeholder="peso" required="required|numeric|min:2" min="1" autofocus>
-					<label for="floatingName">Tu peso(kg)</label>
+					<label for="floatingName">Tu peso (kg)</label>
 					@if ($errors->has('peso'))
 					<span class="text-danger text-left">{{ $errors->first('peso') }}</span>
 					@endif
