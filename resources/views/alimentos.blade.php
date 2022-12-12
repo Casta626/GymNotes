@@ -24,6 +24,21 @@
             text-align: center;
             margin-bottom: 75px !important;
         }
+        .w{
+            width: 30%;
+        }
+        .m{
+            margin-bottom: 40px;
+        }
+        @media (max-width: 800px) {
+            .alimentos {
+                flex-direction: column;
+            }
+            input{
+                width: 120px !important;
+                height: 140px !important;
+            }
+        }
     </style>
 </head>
 
@@ -37,7 +52,7 @@
     @endphp
     <div class="alimentos">
         @foreach ($alimentos as $alimento)
-        <div style="width: 30%">
+        <div class="w">
             <form action="valor-alimentos" method="post">
                 @csrf
                 <p class="oculto">id: <input type="text" name="alimento_id" value="{{$alimento->id}}">
@@ -47,7 +62,7 @@
             </form>
             <div class="centrado"> Producto: <u>{{$alimento->nombre}}</u></div>
             <div class="centrado">{{$alimento->descripcion}}</div>
-            <div class="centrado">Creación de la marca: <u>{{$alimento->fecha_creacion}}</u></div>
+            <div class="centrado m">Creación de la marca: <u>{{$alimento->fecha_creacion}}</u></div>
         </div>
         @php
         $contador++;
